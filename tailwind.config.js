@@ -14,6 +14,11 @@ export default {
       },
     },
   },
+  variants: {
+    extend: {
+      mixBlendMode: ['hover', 'focus'],
+    },
+  },
   plugins: [],
 }
 

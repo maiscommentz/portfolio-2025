@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-transparent">
+    <header>
       <nav class="container mx-auto flex justify-between items-center py-8 px-6">
         <div class="text-3xl font-bold">
           <RouterLink to="/">Filipe F.</RouterLink>
@@ -32,10 +32,10 @@
         
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-6">
-          <li><RouterLink to="/about" class="hover:text-cGreen">à propos</RouterLink></li>
-          <li><RouterLink to="/career" class="hover:text-cGreen">parcours</RouterLink></li>
-          <li><RouterLink to="/projects" class="hover:text-cGreen">projets</RouterLink></li>
-          <li><RouterLink to="/contact" class="hover:text-cGreen">contact</RouterLink></li>
+          <li><RouterLink to="/about">à propos</RouterLink></li>
+          <li><RouterLink to="/career">parcours</RouterLink></li>
+          <li><RouterLink to="/projects">projets</RouterLink></li>
+          <li><RouterLink to="/contact">contact</RouterLink></li>
         </ul>
       </nav>
   
@@ -50,10 +50,10 @@
       >
         <div v-if="isMenuOpen" class="md:hidden container mx-auto items-center px-6">
           <ul class="flex flex-col space-y-2">
-            <li><RouterLink to="/about" class="hover:text-cGreen">à propos</RouterLink></li>
-            <li><RouterLink to="/career" class="hover:text-cGreen">parcours</RouterLink></li>
-            <li><RouterLink to="/projects" class="hover:text-cGreen">projets</RouterLink></li>
-            <li><RouterLink to="/contact" class="hover:text-cGreen">contact</RouterLink></li>
+            <li><RouterLink to="/about">à propos</RouterLink></li>
+            <li><RouterLink to="/career">parcours</RouterLink></li>
+            <li><RouterLink to="/projects">projets</RouterLink></li>
+            <li><RouterLink to="/contact">contact</RouterLink></li>
           </ul>
         </div>
       </transition>

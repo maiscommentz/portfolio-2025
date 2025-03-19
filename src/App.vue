@@ -17,11 +17,9 @@
     <!-- Header -->
     <Header/>
     <!-- Main Content Section -->
-    <main class="container mx-auto flex-1 p-6">
-      <RouterView />
-    </main>
+    <RouterView/>
     <!-- Footer -->
-    <Footer />
+    <Footer/>
   </div>
 </template>
 <script setup lang="ts">

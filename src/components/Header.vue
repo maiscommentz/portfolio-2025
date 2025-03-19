@@ -1,6 +1,6 @@
 <template>
     <header>
-      <nav class="container mx-auto flex justify-between items-center py-8 px-6">
+      <nav class="container mx-auto flex justify-between items-center py-12 px-6">
         <div class="text-3xl font-bold">
           <RouterLink to="/">Filipe F.</RouterLink>
         </div>

@@ -5,6 +5,10 @@
             "subtitle": "Développeur et designer web basé à Fribourg, Suisse.",
             "cta1": "me contacter",
             "cta2": "voir mon cv"
+        },
+        "about": {
+            "title": "À propos de moi",
+            "subtitle": "Qui suis-je? Rencontrez la personne derrière le code et les maquettes: un méange de mon histoire et de mes passions"
         }
     }
 }

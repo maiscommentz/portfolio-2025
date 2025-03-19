@@ -16,8 +16,22 @@
                 </div>
             </div>
         </div>
+        <!-- Down Arrow -->
+        <div class="flex justify-center py-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 cursor-pointer text-cBlack animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+        <!-- Section About -->
+        <div id="about" class="container mx-auto py-8 px-6">
+            <Title>
+                <template v-slot:title>{{ $t('about.title') }}</template>
+                <template v-slot:subtitle>{{ $t('about.subtitle') }}</template>
+            </Title>
+        </div>
     </main>
 </template>
 <script setup lang="ts">
 import Button from '@/components/Button.vue'
+import Title from '@/components/Title.vue'
 </script>

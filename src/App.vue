@@ -33,7 +33,7 @@ const smallBall = ".cursor__ball--small"
 document.body.addEventListener('mousemove', onMouseMove);
 
 // Move the cursor
-function onMouseMove(e) {
+function onMouseMove(e: MouseEvent) {
   gsap.to(bigBall, .5, {
     x: e.pageX - 40,
     y: e.pageY - window.scrollY - 40

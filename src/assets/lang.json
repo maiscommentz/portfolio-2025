@@ -1,5 +1,10 @@
 {
     "fr": {
-        
+        "hero": {
+            "title": "Salut, moi c'est Filipe Ferreira 👋",
+            "subtitle": "Développeur et designer web basé à Fribourg, Suisse.",
+            "cta1": "me contacter",
+            "cta2": "voir mon cv"
+        }
     }
 }

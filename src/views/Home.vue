@@ -28,6 +28,13 @@
                 <template v-slot:title>{{ $t('about.title') }}</template>
                 <template v-slot:subtitle>{{ $t('about.subtitle') }}</template>
             </Title>
+            <div class="flex flex-row justify-center space-x-16">
+                <img src="/images/about.jpg" alt="Photos de moi" class="w-1/3 object-cover" />
+                <div class="flex flex-col w-2/3 justify-between">
+                    <p class="text-lg" v-html="$t('about.description', {br: '<br><br>', bold: '<b>', nobold: '</b>'})"/>
+                    <img src="/images/signature.png" alt="Signature de Filipe" class="w-1/2 mt-4" />
+                </div>
+            </div>
         </div>
     </main>
 </template>

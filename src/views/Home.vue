@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Section Hero -->
-        <div class="container mx-auto py-8 px-6">
+        <div class="container mx-auto py-16 px-6">
             <div class="flex flex-row">
                 <div class="w-full flex flex-col justify-center">
                     <h1 class="text-5xl font-semibold">{{ $t('hero.title') }}</h1>
@@ -23,7 +23,7 @@
             </svg>
         </div>
         <!-- Section About -->
-        <div id="about" class="container mx-auto py-8 px-6">
+        <div id="about" class="container mx-auto py-16 px-6">
             <Title>
                 <template v-slot:title>{{ $t('about.title') }}</template>
                 <template v-slot:subtitle>{{ $t('about.subtitle') }}</template>
@@ -36,9 +36,14 @@
                 </div>
             </div>
         </div>
+        <!-- Section Technologies -->
+        <div class="container mx-auto py-16 px-6">
+            <Carousel />
+        </div>
     </main>
 </template>
 <script setup lang="ts">
 import Button from '@/components/Button.vue'
 import Title from '@/components/Title.vue'
+import Carousel from '@/components/Carousel.vue'
 </script>

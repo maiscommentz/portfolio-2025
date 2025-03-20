@@ -1,6 +1,6 @@
 <template>
     <div class="w-full timeline">
-        <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" class="w-full">
+        <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" class="w-full overflow-visible">
             <!-- Curved path -->
             <path d="M0, 200 C500, 500 500, 0 1000, 200" class="stroke-cBlack" fill="none" stroke-width="2" />
             <!-- Dots -->
@@ -13,10 +13,14 @@
                   class="stroke-cBlack" stroke-width="2" />
             <!-- Labels -->
             <foreignObject v-for="(point, i) in points" :key="'label' + i"
-                            :x="point.cx - (point.width / 2)" :y="point.offsetY" :width="point.width" height="200">
-                <div class="bg-cBlack text-cWhite p-2 rounded-lg text-sm">
+                            :x="point.cx - (point.width / 2)" :y="point.offsetY"
+                            :width="point.width" height="200" class="overflow-visible">
+                <div class="bg-cBlack text-cWhite p-2 rounded-lg text-sm hover:scale-105 ease-in-out transform transition duration-300">
                     <p>{{ point.title }}</p>
-                    <p class="text-cGreen">{{ point.date }}</p>
+                    <div class="flex w-full justify-between">
+                        <p class="text-cGreen">{{ point.date }}</p>
+                        <img src="/icons/click.svg" alt="Plus d'informations" class="w-4 h-4" />
+                    </div>
                 </div>
             </foreignObject>
         </svg>

@@ -60,7 +60,7 @@ const points = [
         width: 200,
         offsetY: 300, // box below dot
         title: "CEO chez kodee",
-        date: "Octobre 2023",
+        date: "Novembre 2023",
     },
 ];
 
@@ -104,31 +104,42 @@ onMounted(() => {
     });
 
     // Lines animation
-    gsap.from("line", {
-        opacity: 0,
-        y: -20,
-        duration: 0.6,
-        delay: 1.5,
-        stagger: 0.4,
-        ease: "power2.out",
-        scrollTrigger: { 
-            trigger: svg, 
-            start: "bottom 80%",
-        },
+    document.querySelectorAll("line").forEach((line, i) => {
+        const length = (line as SVGLineElement).getTotalLength?.() || 100; // fallback if not supported
+
+        gsap.set(line, {
+            strokeDasharray: length,
+            strokeDashoffset: length,
+        });
+
+        gsap.to(line, {
+            strokeDashoffset: 0,
+            duration: 0.8,
+            delay: 1 + i * 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: svg,
+                start: "bottom 80%",
+            },
+        });
     });
 
     // Labels animation
-    gsap.from("foreignObject", {
-        opacity: 0,
-        y: 50,
-        duration: 0.6,
-        delay: 2,
-        stagger: 0.3,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: svg,
-            start: "bottom 80%",
-        },
+    document.querySelectorAll("foreignObject").forEach((el, i) => {
+        const point = points[i];
+        const fromY = point.offsetY < point.cy ? -50 : 50; // Above → from top, Below → from bottom
+
+        gsap.from(el, {
+            opacity: 0,
+            y: fromY,
+            duration: 0.6,
+            delay: 1.5 + i * 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: svg,
+                start: "bottom 80%",
+            },
+        });
     });
 });
 </script>

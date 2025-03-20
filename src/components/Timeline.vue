@@ -6,7 +6,7 @@
             <!-- Dots -->
             <circle v-for="(point, i) in points" :key="i"
                     :cx="point.cx" :cy="point.cy"
-                    r="10" class="fill-cBlack" />
+                    r="10" class="fill-cBlack timeline-dot" />
             <!-- Lines -->
             <line v-for="(point, i) in points" :key="'line' + i"
                   :x1="point.cx" :y1="point.cy" :x2="point.cx" :y2="point.offsetY"
@@ -93,7 +93,7 @@ onMounted(() => {
     }
 
     // Dots animation
-    gsap.from("circle", {
+    gsap.from(".timeline-dot", {
         opacity: 0,
         scale: 0,
         transformOrigin: "center",

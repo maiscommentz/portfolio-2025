@@ -15,7 +15,7 @@
             <foreignObject v-for="(point, i) in points" :key="'label' + i"
                             :x="point.cx - (point.width / 2)" :y="point.offsetY"
                             :width="point.width" height="200" class="overflow-visible">
-                <div class="bg-cBlack text-cWhite p-2 rounded-lg text-sm hover:scale-105 ease-in-out transform transition duration-300">
+                <div class="bg-cBlack text-cWhite p-2 rounded-lg text-sm hover:scale-105 ease-in-out transform transition duration-300 clickable">
                     <p>{{ point.title }}</p>
                     <div class="flex w-full justify-between">
                         <p class="text-cGreen">{{ point.date }}</p>
@@ -69,8 +69,6 @@ const points = [
 ];
 
 onMounted(() => {
-    const svg = document.querySelectorAll(".timeline")
-
     const path = document.querySelector(".timeline path") as SVGPathElement;
     const pathLength = path?.getTotalLength();
 
@@ -87,7 +85,7 @@ onMounted(() => {
             ease: "power1.out",
             scrollTrigger: {
                 trigger: path,
-                start: "bottom 20%",
+                start: "top 0%",
             },
         });
     }
@@ -102,13 +100,13 @@ onMounted(() => {
         delay: 0,
         ease: "back.out(1.7)",
         scrollTrigger: {
-            trigger: svg,
-            start: "bottom 80%",
+            trigger: path,
+            start: "top 0%",
         },
     });
 
     // Lines animation
-    document.querySelectorAll("line").forEach((line, i) => {
+    document.querySelectorAll(".timeline line").forEach((line, i) => {
         const length = (line as SVGLineElement).getTotalLength?.() || 100; // fallback if not supported
 
         gsap.set(line, {
@@ -122,8 +120,8 @@ onMounted(() => {
             delay: 1 + i * 0.3,
             ease: "power2.out",
             scrollTrigger: {
-                trigger: svg,
-                start: "bottom 80%",
+                trigger: path,
+                start: "top 0%",
             },
         });
     });
@@ -131,7 +129,7 @@ onMounted(() => {
     // Labels animation
     document.querySelectorAll("foreignObject").forEach((el, i) => {
         const point = points[i];
-        const fromY = point.offsetY < point.cy ? -50 : 50; // Above → from top, Below → from bottom
+        const fromY = point.offsetY < point.cy ? -50 : 50;
 
         gsap.from(el, {
             opacity: 0,
@@ -140,8 +138,8 @@ onMounted(() => {
             delay: 1.5 + i * 0.3,
             ease: "power2.out",
             scrollTrigger: {
-                trigger: svg,
-                start: "bottom 80%",
+                trigger: path,
+                start: "top 0%",
             },
         });
     });

@@ -15,7 +15,7 @@
             <foreignObject v-for="(point, i) in points" :key="'label' + i"
                             :x="point.cx - (point.width / 2)" :y="point.offsetY"
                             :width="point.width" height="200" class="overflow-visible">
-                <div class="bg-cBlack text-cWhite p-2 rounded-lg text-sm hover:scale-105 ease-in-out transform transition duration-300 clickable">
+                <div class="bg-cBlack text-cWhite p-2 rounded-lg text-sm hover:cursor-pointer hover:scale-105 ease-in-out transform transition duration-300 clickable">
                     <p>{{ point.title }}</p>
                     <div class="flex w-full justify-between">
                         <p class="text-cGreen">{{ point.date }}</p>

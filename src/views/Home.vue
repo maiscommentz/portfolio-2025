@@ -23,7 +23,7 @@
             </svg>
         </div>
         <!-- Section About -->
-        <div id="about" class="container mx-auto py-24 px-6">
+        <div id="about" class="container mx-auto py-12 px-6">
             <Title>
                 <template v-slot:title>{{ $t('about.title') }}</template>
                 <template v-slot:subtitle>{{ $t('about.subtitle') }}</template>
@@ -41,12 +41,22 @@
             <Carousel />
         </div>
         <!-- Section Career -->
-        <div id="career" class="container mx-auto py-24 px-6">
+        <div id="career" class="container mx-auto py-12 px-6">
             <Title>
                 <template v-slot:title>{{ $t('career.title') }}</template>
                 <template v-slot:subtitle>{{ $t('career.subtitle') }}</template>
             </Title>
             <Timeline/>
+        </div>
+        <!-- Section Projects -->
+        <div id="projects" class="container mx-auto py-12 px-6">
+            <Title>
+                <template v-slot:title>{{ $t('projects.title') }}</template>
+                <template v-slot:subtitle>{{ $t('projects.subtitle') }}</template>
+            </Title>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Project v-for="(item, index) in parseInt($t('projects.size'))" :key="index" :index="index"/>
+            </div>
         </div>
     </main>
 </template>
@@ -55,4 +65,5 @@ import Button from '@/components/Button.vue'
 import Title from '@/components/Title.vue'
 import Carousel from '@/components/Carousel.vue'
 import Timeline from '@/components/Timeline.vue'
+import Project from '@/components/Project.vue'
 </script>

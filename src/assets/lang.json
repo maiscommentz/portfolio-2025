@@ -14,6 +14,32 @@
         "career": {
             "title": "Mon parcours",
             "subtitle": "Parcours académique et professionnel: les étapes clés de mon évolution en tant que développeur et designer."
+        },
+        "projects": {
+            "title": "Mes oeuvres",
+            "subtitle": "Découvrez les fruits de mon travail: une vitrine de mes réalisations les plus aboutis, reflétant mon expertise technique et ma créativité",
+            "size": "5",
+            "items": [
+                {
+                    "title": "{bold}Flashlog{nobold} App mobile pour tracer ses ascensions et les partager avec ses amis 🧗",
+                    "image": "about.jpg"
+                },
+                {
+                    "title": "{bold}Portfolio{nobold} Site web pour présenter mes projets"
+                },
+                {
+                    "title": "{bold}Portfolio{nobold} Site web pour présenter mes projets"
+                },
+                {
+                    "title": "{bold}Portfolio{nobold} Site web pour présenter mes projets"
+                },
+                {
+                    "title": "{bold}Portfolio{nobold} Site web pour présenter mes projets"
+                }
+            ]
+        },
+        "utils": {
+            "seemore": "voir plus"
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <!-- Custom cursor -->
-    <div class="cursor hidden md:flex">
+    <div class="cursor hidden lg:flex">
       <div class="cursor__ball cursor__ball--big fill-[#e0e0e0]">
         <svg width="80" height="80" viewBox="0 0 30 30">
           <circle cx="15" cy="15" r="12" />

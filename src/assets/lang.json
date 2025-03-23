@@ -1,7 +1,7 @@
 {
     "fr": {
         "hero": {
-            "title": "Salut, moi c'est Filipe Ferreira 👋",
+            "title": "Salut, moi c'est Filipe Ferreira!",
             "subtitle": "Développeur et designer basé à Fribourg, Suisse.",
             "cta1": "me contacter",
             "cta2": "voir mon cv"
@@ -21,7 +21,7 @@
             "size": "5",
             "items": [
                 {
-                    "title": "{bold}Flashlog{nobold} App mobile pour tracer ses ascensions et les partager avec ses amis 🧗",
+                    "title": "{bold}Flashlog{nobold} App mobile pour tracer ses ascensions et les partager avec ses amis",
                     "image": "about.jpg"
                 },
                 {

@@ -3,7 +3,7 @@
         <!-- Section Hero -->
         <div class="container mx-auto py-12 px-6">
             <div class="flex flex-row">
-                <div class="w-full flex flex-col justify-center">
+                <div class="w-1/2 flex flex-col justify-center pr-32">
                     <h1 class="text-5xl font-semibold">{{ $t('hero.title') }}</h1>
                     <p class="text-lg mt-4">{{ $t('hero.subtitle')}}</p>
                     <div class="mt-8 space-x-6">
@@ -11,7 +11,7 @@
                         <Button type="secondary">{{ $t('hero.cta2') }}</Button>
                     </div>
                 </div>
-                <div class="w-full flex justify-center">
+                <div class="w-1/2 flex justify-center">
                     <img src="/images/hero.svg" alt="Illustration d'un développeur web" class="w-full" />
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <img src="/images/about.jpg" alt="Photos de moi" class="w-1/3 object-cover rounded-lg" />
                 <div class="flex flex-col w-2/3 justify-between">
                     <p class="text-lg" v-html="$t('about.description', {br: '<br><br>', bold: '<b>', nobold: '</b>'})"/>
-                    <img src="/images/signature.png" alt="Signature de Filipe" class="w-1/2 mt-4" />
+                    <img src="/images/signature.png" alt="Signature de Filipe" class="w-1/3 mt-4" />
                 </div>
             </div>
         </div>

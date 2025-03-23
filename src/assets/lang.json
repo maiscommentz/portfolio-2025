@@ -38,6 +38,12 @@
                 }
             ]
         },
+        "contact": {
+            "title": "Besoin de me contacter?",
+            "email": "contact@saikoon.ch",
+            "linkedin": "filipe-casimiro-ferreira",
+            "github": "maiscommentz"
+        },
         "utils": {
             "seemore": "voir plus"
         }

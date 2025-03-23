@@ -19,7 +19,7 @@
                     <p>{{ point.title }}</p>
                     <div class="flex w-full justify-between">
                         <p class="text-cGreen">{{ point.date }}</p>
-                        <img src="/icons/click.svg" alt="Plus d'informations" class="w-4 h-4" />
+                        <img src="/icons/click.svg" alt="Plus d'informations" class="w-3.5 h-3.5" />
                     </div>
                 </div>
             </foreignObject>

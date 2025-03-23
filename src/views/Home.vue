@@ -54,7 +54,7 @@
                 <template v-slot:title>{{ $t('projects.title') }}</template>
                 <template v-slot:subtitle>{{ $t('projects.subtitle') }}</template>
             </Title>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <Project v-for="(item, index) in parseInt($t('projects.size'))" :key="index" :index="index"/>
             </div>
         </div>

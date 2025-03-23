@@ -21,8 +21,8 @@
             "size": "5",
             "items": [
                 {
-                    "title": "{bold}Flashlog{nobold} App mobile pour tracer ses ascensions et les partager avec ses amis",
-                    "image": "about.jpg"
+                    "title": "{bold}Flashlog{nobold} App mobile pour partager ses ascensions",
+                    "image": "flashlog.png"
                 },
                 {
                     "title": "{bold}Portfolio{nobold} Site web pour présenter mes projets"

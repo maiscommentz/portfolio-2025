@@ -1,14 +1,14 @@
 <template>
     <div class="outline outline-2 outline-cBlack p-6 rounded-lg">
-        <div class="flex flex-row space-x-4">
-            <div class="w-1/2 flex flex-col justify-between">
+        <div class="flex flex-col-reverse xl:flex-row xl:space-x-4 h-full">
+            <div class="w-full xl:w-1/2 flex flex-col justify-between mt-6">
                 <p class="text-lg" v-html="$t('projects.items.' + index + '.title', {bold: '<b>', nobold: '</b>'})"></p>
-                <div class="flex w-fit flex-row space-x-2 items-center hover:cursor-pointer">
-                    <img src="/icons/click_black.svg" alt="Plus d'informations" class="w-4 h-4" />
-                    <p>{{ $t('utils.seemore') }}</p>
+                <div class="flex w-fit flex-row space-x-2 items-center hover:cursor-pointer mt-6">
+                    <img src="/icons/click_black.svg" alt="Plus d'informations" class="w-5 h-5" />
+                    <p class="text-lg">{{ $t('utils.seemore') }}</p>
                 </div>
             </div>
-            <img src="/images/about.jpg" alt="Projet 1" class="w-1/2 outline outline-2 outline-cBlack object-contain rounded-lg" />
+            <img :src="'/images/projects/' + $t('projects.items.' + index + '.image')" :alt="'Projet ' + (index!+1)" class="w-full xl:w-1/2 outline outline-2 outline-cBlack object-cover rounded-lg" />
         </div>
     </div>
 </template>

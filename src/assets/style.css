@@ -6,11 +6,9 @@
 
 body {
     @apply text-cBlack;
+    @apply text-lg;
     font-family: 'Fira Code', sans-serif;
     font-weight: 400;
-    font-size: 20px;
-    font-style: normal;
-    line-height: normal;
     cursor: none;
     background-color: #FFF;
 }

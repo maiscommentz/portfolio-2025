@@ -31,7 +31,9 @@
 import gsap from 'gsap';
 import { onMounted } from 'vue';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useI18n } from 'vue-i18n';
 gsap.registerPlugin(ScrollTrigger);
+const { t } = useI18n();
 
 const points = [
     {   
@@ -39,32 +41,32 @@ const points = [
         cy: 252.5,
         width: 200,
         offsetY: 60, // box above dot
-        title: "Apprentissage à l'EMF Fribourg",
-        date: "Septembre 2019",
+        title: t('career.items.0.title'),
+        date: t('career.items.0.date'),
     },
     {
         cx: 366.67,
         cy: 289,
         width: 200,
         offsetY: 400, // box below dot
-        title: "Stage de développeur web à l'Agence MiNT",
-        date: "Septembre 2022",
+        title: t('career.items.1.title'),
+        date: t('career.items.1.date'),
     },
     {
         cx: 633.33,
         cy: 176,
         width: 200,
         offsetY: 0, // box above dot
-        title: "Etudiant bachelor à la HEIA-FR",
-        date: "Septembre 2023",
+        title: t('career.items.2.title'),
+        date: t('career.items.2.date'),
     },
     {
         cx: 900,
         cy: 167.5,
         width: 200,
         offsetY: 300, // box below dot
-        title: "CEO chez kodee",
-        date: "Novembre 2023",
+        title: t('career.items.3.title'),
+        date: t('career.items.3.date'),
     },
 ];
 

@@ -13,12 +13,31 @@
         },
         "career": {
             "title": "Mon parcours",
-            "subtitle": "Parcours académique et professionnel: les étapes clés de mon évolution en tant que développeur et designer."
+            "subtitle": "Parcours académique et professionnel: les étapes clés de mon évolution en tant que développeur et designer.",
+            "size" : "4",
+            "items": [
+                {
+                    "title": "Apprentissage à l'EMF Fribourg",
+                    "date": "09/2019 - 07/2023"
+                },
+                {
+                    "title": "Stage de développeur web à l'Agence MiNT",
+                    "date": "08/2022 - 06/2023"
+                },
+                {
+                    "title": "Etudiant bachelor à la HEIA-FR",
+                    "date": "09/2023 - maintenant"
+                },
+                {
+                    "title": "CEO chez kodee",
+                    "date": "11/2023 - maintenant"
+                }
+            ]
         },
         "projects": {
             "title": "Mes oeuvres",
             "subtitle": "Découvrez les fruits de mon travail: une vitrine de mes réalisations les plus aboutis, reflétant mon expertise technique et ma créativité",
-            "size": 5,
+            "size": "5",
             "items": [
                 {
                     "title": "{bold}Flashlog{nobold} App mobile pour partager ses ascensions",

@@ -28,11 +28,11 @@
                 <template v-slot:title>{{ $t('about.title') }}</template>
                 <template v-slot:subtitle>{{ $t('about.subtitle') }}</template>
             </Title>
-            <div class="flex flex-row justify-center space-x-16">
-                <img src="/images/about.jpg" alt="Photos de moi" class="w-1/3 object-cover rounded-lg" />
-                <div class="flex flex-col w-2/3 justify-between">
+            <div class="flex flex-col md:flex-row justify-center md:space-y-0 space-y-6 md:space-x-16">
+                <img src="/images/about.jpg" alt="Photos de moi" class="w-full md:w-1/3 object-cover rounded-lg" />
+                <div class="flex flex-col w-full md:w-2/3 justify-between">
                     <p class="text-lg" v-html="$t('about.description', {br: '<br><br>', bold: '<b>', nobold: '</b>'})"/>
-                    <img src="/images/signature.png" alt="Signature de Filipe" class="w-1/3 mt-4" />
+                    <img src="/images/signature.png" alt="Signature de Filipe" class="w-2/3 md:w-1/3 mt-6 md:mt-12" />
                 </div>
             </div>
         </div>

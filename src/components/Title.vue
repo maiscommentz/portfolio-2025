@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-row w-full space-x-6 items-center pb-16">
+    <div class="flex flex-col md:flex-row w-full items-start md:items-center pb-12">
         <div class="bg-cGreen font-semibold text-3xl text-nowrap p-2">
             <slot name="title"></slot>
         </div>
-        <div class="text-sm text-wrap">
+        <div class="text-base text-wrap mt-6 md:mt-0 md:ml-6">
             <slot name="subtitle"></slot>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <header>
-      <nav class="container mx-auto flex justify-between items-center py-12 px-6">
+      <nav class="container mx-auto flex justify-between items-center py-6 md:py-12 px-6">
         <div class="text-3xl font-bold">
           <RouterLink to="/">Filipe F.</RouterLink>
         </div>
@@ -38,8 +38,10 @@
           <li><RouterLink to="/contact">contact</RouterLink></li>
         </ul>
       </nav>
-  
-      <!-- Mobile Menu (visible when burger menu is clicked) -->
+
+      <hr class="md:hidden border-t border-cBlack" />
+
+      <!-- Mobile Menu -->
       <transition
         enter-active-class="transition duration-200 ease-out"
         enter-from-class="transform opacity-0 -translate-y-2"
@@ -48,7 +50,7 @@
         leave-from-class="transform opacity-100 translate-y-0"
         leave-to-class="transform opacity-0 -translate-y-2"
       >
-        <div v-if="isMenuOpen" class="md:hidden container mx-auto items-center px-6">
+        <div v-if="isMenuOpen" class="absolute md:hidden container mx-auto items-center px-6 z-100 bg-cWhite shadow-md py-4">
           <ul class="flex flex-col space-y-2">
             <li><RouterLink to="/about">à propos</RouterLink></li>
             <li><RouterLink to="/career">parcours</RouterLink></li>

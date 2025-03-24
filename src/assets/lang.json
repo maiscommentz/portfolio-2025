@@ -18,7 +18,7 @@
         "projects": {
             "title": "Mes oeuvres",
             "subtitle": "Découvrez les fruits de mon travail: une vitrine de mes réalisations les plus aboutis, reflétant mon expertise technique et ma créativité",
-            "size": "5",
+            "size": 5,
             "items": [
                 {
                     "title": "{bold}Flashlog{nobold} App mobile pour partager ses ascensions",
@@ -41,7 +41,7 @@
         },
         "contact": {
             "title": "Besoin de me contacter?",
-            "email": "contact@saikoon.ch",
+            "email": "contact{at}saikoon.ch",
             "linkedin": "filipe-casimiro-ferreira",
             "github": "maiscommentz"
         },

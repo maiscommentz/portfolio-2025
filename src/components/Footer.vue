@@ -7,7 +7,7 @@
                     <div class="mt-12 text-xl">
                         <div class="flex items-center mb-6 cursor-pointer hover:underline underline-offset-4">
                             <img src="/icons/email.svg" alt="Icone email" class="w-8 h-8 mr-4" />
-                            <a>{{ $t('contact.email') }}</a>
+                            <a>{{ $t('contact.email', {at: '@'}) }}</a>
                         </div>
                         <div class="flex items-center mb-6 cursor-pointer hover:underline underline-offset-4">
                             <img src="/icons/linkedin.svg" alt="Icone Linkedin" class="w-8 h-8 mr-4" />

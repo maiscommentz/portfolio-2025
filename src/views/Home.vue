@@ -1,17 +1,17 @@
 <template>
     <main>
         <!-- Section Hero -->
-        <div class="container mx-auto py-12 px-6">
-            <div class="flex flex-row">
-                <div class="w-1/2 flex flex-col justify-center pr-32">
-                    <h1 class="text-5xl font-semibold">{{ $t('hero.title') }}</h1>
-                    <p class="text-lg mt-4">{{ $t('hero.subtitle')}}</p>
-                    <div class="mt-8 space-x-6">
+        <div class="container mx-auto h-[75vh] md:h-full py-12 px-6">
+            <div class="flex flex-row items-center h-full">
+                <div class="w-full md:w-1/2 flex flex-col justify-center lg:pr-32">
+                    <h1 style="font-size: 47px; line-height: 1;" class="md:text-5xl font-semibold">{{ $t('hero.title') }}</h1>
+                    <p class="text-base md:text-lg mt-4">{{ $t('hero.subtitle')}}</p>
+                    <div class="flex flex-col md:flex-row mt-8 space-y-6 md:space-y-0 md:space-x-6">
                         <Button type="primary">{{ $t('hero.cta1') }}</Button>
                         <Button type="secondary">{{ $t('hero.cta2') }}</Button>
                     </div>
                 </div>
-                <div class="w-1/2 flex justify-center">
+                <div class="hidden w-full md:w-1/2 md:flex justify-center">
                     <img src="/images/hero.svg" alt="Illustration d'un développeur web" class="w-full" />
                 </div>
             </div>

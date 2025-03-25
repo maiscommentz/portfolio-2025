@@ -46,7 +46,8 @@
                 <template v-slot:title>{{ $t('career.title') }}</template>
                 <template v-slot:subtitle>{{ $t('career.subtitle') }}</template>
             </Title>
-            <Timeline/>
+            <TimelineH v-if="windowWidth >= 1024"/>
+            <TimelineV v-else/>
         </div>
         <!-- Section Projects -->
         <div id="projects" class="container mx-auto py-12 px-6">
@@ -64,6 +65,22 @@
 import Button from '@/components/Button.vue'
 import Title from '@/components/Title.vue'
 import Carousel from '@/components/Carousel.vue'
-import Timeline from '@/components/Timeline.vue'
+import TimelineH from '@/components/TimelineH.vue'
+import TimelineV from '@/components/TimelineV.vue'
 import Project from '@/components/Project.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const windowWidth = ref(window.innerWidth)
+
+const updateWidth = () => {
+    windowWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+  window.addEventListener('resize', updateWidth)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWidth)
+})
 </script>

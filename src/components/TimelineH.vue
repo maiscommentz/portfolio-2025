@@ -14,9 +14,9 @@
             <!-- Labels -->
             <foreignObject v-for="(point, i) in points" :key="'label' + i"
                             :x="point.cx - (point.width / 2)" :y="point.offsetY"
-                            :width="point.width" height="200" class="overflow-visible">
+                            :width="point.width" height="200" :class="''" class="overflow-visible">
                 <div class="bg-cBlack text-cWhite p-3 rounded-lg text-xs hover:cursor-pointer hover:scale-105 ease-in-out transform transition duration-300 clickable">
-                    <p>{{ point.title }}</p>
+                    <p class="">{{ point.title }}</p>
                     <div class="flex w-full justify-between">
                         <p class="text-cGreen">{{ point.date }}</p>
                         <img src="/icons/click.svg" alt="Plus d'informations" class="w-3.5 h-3.5" />
@@ -148,4 +148,9 @@ onMounted(() => {
 });
 </script>
 <style scoped>
+foreignObject > div {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
 </style>
+

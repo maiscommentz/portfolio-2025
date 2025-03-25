@@ -50,7 +50,7 @@
         leave-from-class="transform opacity-100 translate-y-0"
         leave-to-class="transform opacity-0 -translate-y-2"
       >
-        <div v-if="isMenuOpen" class="absolute md:hidden container mx-auto items-center px-6 z-100 bg-cWhite shadow-md py-4">
+        <div v-if="isMenuOpen" class="absolute md:hidden container mx-auto items-center px-6 z-100 bg-cWhite shadow-lg py-4">
           <ul class="flex flex-col space-y-2">
             <li><RouterLink to="/about">à propos</RouterLink></li>
             <li><RouterLink to="/career">parcours</RouterLink></li>

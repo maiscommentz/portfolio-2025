@@ -1,35 +1,35 @@
 <template>
-    <div ref="timelineContainer" class="w-full relative timeline">
-      <!-- SVG -->
-      <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" class="w-full overflow-visible">
-        <!-- Curved path -->
-        <path d="M0, 200 C500, 500 500, 0 1000, 200" class="stroke-cBlack" fill="none" stroke-width="2" />
-  
-        <!-- Dots -->
-        <circle v-for="(point, i) in points" :key="i"
-                :cx="point.cx" :cy="point.cy"
-                r="10" class="fill-cBlack timeline-dot" />
-  
-        <!-- Lines -->
-        <line v-for="(point, i) in points" :key="'line' + i"
-              :x1="point.cx" :y1="point.cy" :x2="point.cx" :y2="point.offsetY"
-              class="stroke-cBlack" stroke-width="2" />
-      </svg>
-  
-        <!-- Labels (HTML) -->
-        <div v-for="(point, i) in points" :key="'label' + i"
-            class="absolute label transition-transform duration-300 ease-in-out hover:scale-105"
-            :style="labelStyles[i]">
-            <div class="bg-cBlack text-cWhite p-3 rounded-lg clickable w-[300px]">
-                <p>{{ point.title }}</p>
-                <div class="flex w-full justify-between items-center mt-1">
-                    <p class=" text-cGreen">{{ point.date }}</p>
-                    <img src="/icons/click.svg" alt="Plus d'informations" class="w-3.5 h-3.5" />
-                </div>
+  <div ref="timelineContainer" class="w-full relative timeline">
+    <!-- SVG -->
+    <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" class="w-full overflow-visible">
+      <!-- Curved path -->
+      <path d="M0, 200 C500, 500 500, 0 1000, 200" class="stroke-cBlack" fill="none" stroke-width="2" />
+
+      <!-- Dots -->
+      <circle v-for="(point, i) in points" :key="i"
+              :cx="point.cx" :cy="point.cy"
+              r="10" class="fill-cBlack timeline-dot" />
+
+      <!-- Lines -->
+      <line v-for="(point, i) in points" :key="'line' + i"
+            :x1="point.cx" :y1="point.cy" :x2="point.cx" :y2="point.offsetY"
+            class="stroke-cBlack" stroke-width="2" />
+    </svg>
+
+    <!-- Labels (HTML) -->
+    <div v-for="(point, i) in points" :key="'label' + i"
+        class="absolute label transition-transform duration-300 ease-in-out hover:scale-105 z-10"
+        :style="labelStyles[i]">
+        <div class="bg-cBlack text-cWhite p-3 rounded-lg clickable w-[300px]">
+            <p>{{ point.title }}</p>
+            <div class="flex w-full justify-between items-center mt-1">
+                <p class=" text-cGreen">{{ point.date }}</p>
+                <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" />
             </div>
         </div>
     </div>
-  </template>
+  </div>
+</template>
   
   <script setup lang="ts">
   import { ref, reactive, watchEffect, onMounted, onBeforeUnmount } from 'vue';
@@ -42,7 +42,7 @@
   
   const { t } = useI18n();
   const timelineContainer = ref<HTMLDivElement | null>(null);
-  const svgWidth = 1000; // corresponds to viewBox width
+  const svgWidth = 1000;
   const labelWidth = 300;
   
   const points = [
@@ -61,7 +61,6 @@
     const scale = containerWidth / svgWidth;
   
     labelStyles.length = 0;
-  
     points.forEach((point, i) => {
       const isFirst = i === 0;
       const isLast = i === points.length - 1;

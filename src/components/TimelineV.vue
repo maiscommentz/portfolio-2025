@@ -1,87 +1,87 @@
 <template>
-  <div ref="timelineRef" class="relative flex flex-col items-start space-y-16 py-10 px-6 md:px-16">
-    <div
-      v-for="(point, i) in points"
-      :key="'point-' + i"
-      class="relative flex flex-col md:flex-row items-start md:items-center group"
-    >
-      <!-- Dot -->
-      <div class="absolute left-0 md:left-[10px] top-0 md:top-1/2 transform md:-translate-y-1/2 w-4 h-4 bg-cBlack rounded-full z-10 timeline-dot" />
-
-      <!-- Vertical Line -->
-      <div
-        v-if="i !== points.length - 1"
-        class="absolute left-[6px] top-4 md:top-1/2 md:translate-y-0 w-px h-full bg-cBlack z-0"
-        style="min-height: 80px"
-      />
-
-      <!-- Content -->
-      <div class="ml-8 md:ml-20 bg-cBlack text-cWhite p-4 rounded-lg w-full md:max-w-md cursor-pointer transition transform hover:scale-105 label">
-        <p class="text-base md:text-xl">{{ point.title }}</p>
-        <div class="flex justify-between items-center mt-2">
-          <p class="text-base md:text-xl text-cGreen">{{ point.date }}</p>
-          <img src="/icons/click.svg" alt="More info" class="w-6 h-6" />
+    <div ref="timelineContainer" class="relative w-full timeline">
+      <!-- SVG Timeline -->
+      <svg viewBox="0 0 500 700" preserveAspectRatio="none" class="w-full h-auto overflow-visible"  style="aspect-ratio: 5 / 7">
+        <!-- Main vertical line -->
+        <line x1="0" y1="0" x2="0" y2="700" class="stroke-cBlack" stroke-width="2" />
+  
+        <!-- Dots -->
+        <circle
+          v-for="(point, i) in points"
+          :key="'dot-' + i"
+          :cx="point.cx"
+          :cy="point.cy + point.offsetY"
+          r="10"
+          class="fill-cBlack timeline-dot"
+        />
+  
+        <!-- Horizontal lines -->
+        <line
+          v-for="(point, i) in points"
+          :key="'line-' + i"
+          :x1="point.cx"
+          :y1="point.cy + point.offsetY"
+          :x2="point.cx + point.offsetX"
+          :y2="point.cy + point.offsetY"
+          class="stroke-cBlack"
+          stroke-width="2"
+        />
+      </svg>
+  
+      <!-- Absolutely Positioned Labels -->
+      <div v-for="(point, i) in points" :key="'label' + i"
+            class="absolute label transition-transform duration-300 ease-in-out hover:scale-105"
+            :style="labelStyles[i]">
+            <div class="bg-cBlack text-cWhite p-3 rounded-lg clickable h-[150px] w-[]">
+                <p>{{ point.title }}</p>
+                <div class="flex w-full justify-between items-center mt-1">
+                    <p class=" text-cGreen">{{ point.date }}</p>
+                    <img src="/icons/click.svg" alt="Plus d'informations" class="w-3.5 h-3.5" />
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</template>
-
+  </template>  
+  
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useI18n } from 'vue-i18n'
+import gsap from 'gsap';
+import { ref, reactive, watchEffect, onMounted, onBeforeUnmount } from 'vue';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useI18n } from 'vue-i18n';
+import { useResizeObserver } from '@vueuse/core';
 
-gsap.registerPlugin(ScrollTrigger)
-const { t } = useI18n()
-
-const timelineRef = ref<HTMLElement | null>(null)
+gsap.registerPlugin(ScrollTrigger);
+const { t } = useI18n();
 
 const points = [
-  {
-    title: t('career.items.0.title'),
-    date: t('career.items.0.date'),
-  },
-  {
-    title: t('career.items.1.title'),
-    date: t('career.items.1.date'),
-  },
-  {
-    title: t('career.items.2.title'),
-    date: t('career.items.2.date'),
-  },
-  {
-    title: t('career.items.3.title'),
-    date: t('career.items.3.date'),
-  },
-]
+    {cx: 0, cy: 50, offsetX: 80, offsetY: 0, title: t('career.items.0.title'), date: t('career.items.0.date')},
+    {cx: 0, cy: 250, offsetX: 80, offsetY: 10, title: t('career.items.1.title'), date: t('career.items.1.date')},
+    {cx: 0, cy: 450, offsetX: 80, offsetY: 20, title: t('career.items.2.title'), date: t('career.items.2.date')},
+    {cx: 0, cy: 650, offsetX: 80, offsetY: 10, title: t('career.items.3.title'), date: t('career.items.3.date')},
+];
 
-onMounted(() => {
-  // Dot animation
-  gsap.from('.timeline-dot', {
-    opacity: 0,
-    scale: 0,
-    duration: 0.6,
-    stagger: 0.2,
-    ease: 'back.out(1.7)',
-    scrollTrigger: {
-      trigger: timelineRef.value,
-      start: 'top 80%',
-    },
-  })
+const timelineContainer = ref<HTMLDivElement | null>(null);
+const svgHeight = 700;
+const labelHeight = 300;
+const labelStyles = reactive<{ left?: string; right?: string; top: string }[]>([]);
 
-  // Label animation
-  gsap.from('.label', {
-    opacity: 0,
-    x: 50,
-    duration: 0.6,
-    stagger: 0.3,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: timelineRef.value,
-      start: 'top 80%',
-    },
-  })
-})
+watchEffect(() => {
+    if (!timelineContainer.value) return;
+  
+    const containerWidth = timelineContainer.value.getBoundingClientRect().width;
+    const scale = containerWidth / svgWidth;
+  
+    labelStyles.length = 0;
+  
+    points.forEach((point, i) => {
+      const isFirst = i === 0;
+      const isLast = i === points.length - 1;
+      const top = `${point.offsetY * scale}px`;
+      return {
+        top: top,
+        left: 0
+      }
+    });
+  });
+  
 </script>

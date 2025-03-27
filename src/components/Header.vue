@@ -31,7 +31,7 @@
         </div>
         
         <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-6">
+        <ul class="hidden md:flex space-x-6 [&>li:hover]:underline [&>li]:underline-offset-4">
           <li><RouterLink to="/about">à propos</RouterLink></li>
           <li><RouterLink to="/career">parcours</RouterLink></li>
           <li><RouterLink to="/projects">projets</RouterLink></li>

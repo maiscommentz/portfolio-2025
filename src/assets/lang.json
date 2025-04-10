@@ -2,14 +2,14 @@
     "fr": {
         "hero": {
             "title": "Salut, moi c'est Filipe Ferreira!",
-            "subtitle": "Développeur et designer basé à Fribourg, Suisse.",
+            "subtitle": "Développeur basé à Fribourg, Suisse.",
             "cta1": "me contacter",
             "cta2": "voir mon cv"
         },
         "about": {
             "title": "À propos de moi",
             "subtitle": "Qui suis-je? Rencontrez la personne derrière le code et les maquettes: un méange de mon histoire et de mes passions",
-            "description": "Je suis {bold}Filipe Ferreira{nobold}, un développeur et designer animé par l'envie de transformer les idées en {bold}expériences digitales uniques{nobold}.{br}Dans mon temps libre, je trouve mon équilibre entre {bold}le sport, les voyages et les jeux-vidéos{nobold}. Ce sont les échappatoires qui me permettent de rester {bold}en forme et concentré{nobold}.{br}Chaque projet pour moi est une aventure, une opportunité de mélanger ma passion pour le développement et design avec mes intérêts variés."
+            "description": "Je suis {bold}Filipe Ferreira{nobold}, un développeur animé par l'envie de transformer les idées en {bold}expériences digitales uniques{nobold}.{br}Dans mon temps libre, je trouve mon équilibre entre {bold}le sport, les voyages et les jeux-vidéos{nobold}. Ce sont les échappatoires qui me permettent de rester {bold}en forme et concentré{nobold}.{br}Chaque projet pour moi est une aventure, une opportunité de mélanger ma passion pour le développement et design avec mes intérêts variés."
         },
         "career": {
             "title": "Mon parcours",

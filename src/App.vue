@@ -13,13 +13,14 @@
         </svg>
       </div>
     </div>
-
-    <!-- Header -->
-    <Header/>
-    <!-- Main Content Section -->
-    <RouterView/>
-    <!-- Footer -->
-    <Footer/>
+    <RouterView v-slot="{ Component }">
+      <!-- Header -->
+      <Header/>
+      <!-- Main Content Section -->
+      <component :is="Component" />
+      <!-- Footer -->
+      <Footer/>
+    </RouterView>
   </div>
 </template>
 <script setup lang="ts">

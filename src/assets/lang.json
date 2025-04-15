@@ -40,13 +40,15 @@
             "size": "5",
             "items": {
                 "flashlog": {
-                    "title": "{bold}Flashlog{nobold} App mobile pour partager ses ascensions",
                     "image": "flashlog.png",
+                    "title": "{bold}Flashlog{nobold} App mobile pour partager ses ascensions",
                     "date": "décembre 2024",
-                    "source": true,
-                    "demo": true,
+                    "source": false,
+                    "source_link": "",
+                    "demo": false,
+                    "demo_link": "",
                     "description": "Flashlog est une application mobile qui permet aux utilisateurs de partager leurs ascensions et de se connecter avec d'autres passionnés d'escalade. L'application offre une interface conviviale et intuitive, permettant aux utilisateurs de créer, modifier et visionner leur profil, de suivre d'autres profils et avant tout de partager les blocs qu'on a grimpé dans un des lieux d'escalade disponibles. Ajouté à cela, on retrouve un système de classement avec des points par lieu d'escalade.",
-                    "stack": "Jetpack Compose, Kotlin, Spring Boot, MySQL, Docker, Figma",
+                    "stack": "Jetpack Compose, Kotlin, Spring Boot, MySQL, Docker",
                     "myrole": "- Création de maquettes et prototypes sur Figma{br}- Conception des routes de l'API Rest{br}- Conception du schéma de la base de données{br}- Développement de l'application mobile avec Jetpack Compose et Kotlin{br}- Aide au développement de l'API Rest avec Spring Boot{br}- Aide à la mise en place de la base de données avec MySQL{br}- Aide à la mise en place de l'environnement de développement avec Docker{br}- Aide à la mise en place du déploiement automatique de l'API Rest avec Docker et Gitlab CI/CD",
                     "gallery": [
                         {
@@ -60,8 +62,16 @@
                     ]
                 },
                 "kodee": {
-                    "title": "{bold}kodee{nobold} Contribution de loin comme de près à tous les projets réalisés par kodee ",
-                    "image": "kodee.png"
+                    "image": "kodee.png",
+                    "title": "{bold}kodee{nobold} Contribution de loin comme de près à tous les projets réalisés",
+                    "date": "novembre 2023",
+                    "source": false,
+                    "source_link": "",
+                    "demo": true,
+                    "demo_link": "https://kodee.ch",
+                    "description": "kodee est une agence de développement web qui se concentre sur la création de solutions digitales sur mesure pour ses clients. L'agence offre une gamme complète de services, allant de la conception à la maintenance, en passant par le développement et le déploiement. Grâce à notre équipe d'étudiants en école d'ingénieur, kodee s'engage à fournir des produits de haute qualité qui répondent aux besoins spécifiques de chaque client.",
+                    "stack": "Vue.js, Tailwind CSS, Laravel, MySQL, Docker, et bien plus...",
+                    "myrole": "- Conception des maquettes et prototypes sur Figma{br}- Développement frontend avec Vue.js et Tailwind CSS{br}- Mmise en place du déploiement automatique avec Docker et Gitlab CI/CD"
                 }
             }
         },

@@ -32,10 +32,10 @@
         
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-6 [&>li:hover]:underline [&>li]:underline-offset-4">
-          <li><RouterLink to="#about">à propos</RouterLink></li>
-          <li><RouterLink to="#career">parcours</RouterLink></li>
-          <li><RouterLink to="#projects">projets</RouterLink></li>
-          <li><RouterLink to="#contact">contact</RouterLink></li>
+          <li><RouterLink to="/#about">à propos</RouterLink></li>
+          <li><RouterLink to="/#career">parcours</RouterLink></li>
+          <li><RouterLink to="/#projects">projets</RouterLink></li>
+          <li><RouterLink to="/#contact">contact</RouterLink></li>
         </ul>
       </nav>
 
@@ -52,10 +52,10 @@
       >
         <div v-if="isMenuOpen" class="absolute md:hidden container mx-auto items-center px-6 z-100 bg-cWhite shadow-lg py-4">
           <ul class="flex flex-col space-y-2">
-            <li @click="isMenuOpen = false"><RouterLink to="#about">à propos</RouterLink></li>
-            <li @click="isMenuOpen = false"><RouterLink to="#career">parcours</RouterLink></li>
-            <li @click="isMenuOpen = false"><RouterLink to="#projects">projets</RouterLink></li>
-            <li @click="isMenuOpen = false"><RouterLink to="#contact">contact</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#about">à propos</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#career">parcours</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#projects">projets</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#contact">contact</RouterLink></li>
           </ul>
         </div>
       </transition>

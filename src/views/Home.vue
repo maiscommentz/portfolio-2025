@@ -58,7 +58,7 @@
                 <template v-slot:subtitle>{{ $t('projects.subtitle') }}</template>
             </Title>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Project v-for="(item, index) in parseInt($t('projects.size'))" :key="index" :index="index"/>
+                <Project v-for="item in projects" :key="item.id" :data="item"/>
             </div>
         </div>
     </main>
@@ -70,7 +70,19 @@ import Carousel from '@/components/Carousel.vue'
 import TimelineH from '@/components/TimelineH.vue'
 import TimelineV from '@/components/TimelineV.vue'
 import Project from '@/components/Project.vue'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, tm } = useI18n()
+const projects = computed(() => {
+  const items = tm('projects.items')
+  return Object.entries(items).map(([key, value]) => ({
+    id: key,
+    title: t(`projects.items.${key}.title`),
+    image: value.image
+  }))
+})
+
 
 const windowWidth = ref(window.innerWidth)
 

@@ -45,7 +45,7 @@
         </div>
         <div v-if="project.gallery" class="container mx-auto py-6 px-6">
             <h1 class="text-3xl font-semibold" v-html="$t(`utils.projects.gallery`)"></h1>
-            <div v-for="(image, index) in project.gallery" :key="index" class="w-full flex flex-col justify-center mt-6 mb-18">
+            <div v-for="(image, index) in project.gallery" :key="index" class="w-full flex flex-col justify-center mt-6 mb-24">
                 <img :src="'/images/projects/flashlog/' + image.src" :alt="image.alt" class="max-h-[80vh] object-contain rounded-lg justify-center" />
                 <p class="text-lg text-center mt-4" v-html="`alt: ` + image.alt"></p>
             </div>

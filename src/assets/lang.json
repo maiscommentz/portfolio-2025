@@ -56,6 +56,10 @@
                             "alt": "Maquette de l'application mobile"
                         },
                         {
+                            "src": "image3.png",
+                            "alt": "Architecture du backend"
+                        },
+                        {
                             "src": "image2.png",
                             "alt": "Schéma de la base de données"
                         }

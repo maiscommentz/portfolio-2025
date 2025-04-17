@@ -7,8 +7,8 @@
                     <h1 style="font-size: 47px; line-height: 1;" class="md:text-5xl font-semibold">{{ $t('hero.title') }}</h1>
                     <p class="text-base md:text-lg mt-4">{{ $t('hero.subtitle')}}</p>
                     <div class="flex flex-col md:flex-row mt-8 space-y-6 md:space-y-0 md:space-x-6">
-                        <RouterLink to="#contact"><Button type="primary">{{ $t('hero.cta1') }}</Button></RouterLink>
-                        <RouterLink to="/cv"><Button type="secondary">{{ $t('hero.cta2') }}</Button></RouterLink>
+                        <RouterLink to="#contact"><Button type="primary" class="w-full">{{ $t('hero.cta1') }}</Button></RouterLink>
+                        <RouterLink to="/cv"><Button type="secondary" class="w-full">{{ $t('hero.cta2') }}</Button></RouterLink>
                     </div>
                 </div>
                 <div class="hidden w-full md:w-1/2 md:flex justify-center">

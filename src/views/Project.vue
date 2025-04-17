@@ -7,7 +7,7 @@
                 </div>
                 <div class="w-full lg:w-1/2 flex flex-col justify-between">
                     <div>
-                        <h1 class="text-3xl md:text-4xl text-left" v-html="$t(`projects.items.${projectId}.title`, {bold: '<b>', nobold: '</b>'})"></h1>
+                        <h1 class="text-2xl md:text-4xl text-left" v-html="$t(`projects.items.${projectId}.title`, {bold: '<b>', nobold: '</b>'})"></h1>
                         <p class="text-lg text-cGreen pt-6" v-html="$t(`projects.items.${projectId}.date`, {br: '<br><br>', bold: '<b>', nobold: '</b>'})"></p>
                     </div>
                     <div class="flex flex-col md:flex-row space-x-0 md:space-x-6 ">

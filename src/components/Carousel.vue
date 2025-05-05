@@ -6,7 +6,7 @@
     </Vue3Marquee>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const imgArray = [
     {src: '/icons/java.png', alt: 'Logo de Java'},
     {src: '/icons/docker.png', alt: 'Logo de Docker'},

@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col w-full h-full overflow-x-hidden">
     <div v-for="(label, index) in labels" :key="label.title" class="career-label">
-      <div class="career-label-label bg-cBlack text-cWhite p-3 rounded-lg clickable h-full w-full ransition-transform duration-300 ease-in-out hover:scale-105">
+      <div class="career-label-label bg-cBlack text-cWhite p-3 rounded-lg clickable h-full w-full">
         <p>{{ label.title }}</p>
         <div class="flex w-full justify-between items-center mt-1">
           <p class=" text-cGreen">{{ label.date }}</p>
-          <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" />
+          <!-- <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" /> -->
         </div>
       </div>
       <div class="career-label-arrow flex justify-center items-center w-full h-full my-2">

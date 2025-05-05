@@ -18,13 +18,13 @@
 
     <!-- Labels (HTML) -->
     <div v-for="(point, i) in points" :key="'label' + i"
-        class="absolute label hover:cursor-pointer z-10"
+        class="absolute label z-10"
         :style="labelStyles[i]">
-        <div class="bg-cBlack text-cWhite p-3 rounded-lg clickable w-[300px] hover:scale-105 transition-transform duration-300 ease-in-out">
+        <div class="bg-cBlack text-cWhite p-3 rounded-lg w-[300px]">
             <p>{{ point.title }}</p>
             <div class="flex w-full justify-between items-center mt-1">
                 <p class=" text-cGreen">{{ point.date }}</p>
-                <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" />
+                <!-- <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" /> -->
             </div>
         </div>
     </div>

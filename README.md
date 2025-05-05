@@ -1,7 +1,3 @@
-<div style="text-align:center">
-<a href="https://portfolio.saikoon.ch"><img alt="Arrazza banner" src="https://i.ibb.co/8Lm275bX/Banner.png" style="display:block; margin:auto; width:100%; height: 120px; object-fit: cover; max-width:100%"/></a>
-</div><br>
-
 # Portfolio V1 (2025)
 Ce portfolio présente ce qu'il faut savoir sur moi, les technologies que j'utilise quotidiennement, mon parcours éducatif et professionnel ainsi que mes réalisations, le tout, dans une design minimaliste et moderne.
 
@@ -46,25 +42,18 @@ git clone https://github.com/maiscommentz/portfolio-2025.git maiscommentz-portfo
 cd maiscommentz-portfolio
 ```
 
-Lancer avec Docker :
-```
-docker-compose build
-docker-compose up -d
-```
-
-Ou bien, installer les dépendances et lancer en mode développement :
+Installer les dépendances et lancer en mode développement :
 ```
 npm install
 npm run dev
 ```
+
 ## 🔄 Intégration et déploiement continu (CI/CD)
 Le projet utilise GitHub Actions pour automatiser les tâches liées au développement et au déploiement. Voici les grandes lignes du pipeline CI/CD :
 
-- **Linting & tests** : à chaque push ou pull request, le code est automatiquement analysé avec ESLint et les tests (pas encore implémentés) sont exécutés.
+- **Linting** : à chaque push ou pull request sur la  branche main, le code est automatiquement analysé avec ESLint.
 
-- **Build** : la version optimisée du site est générée automatiquement.
-
-- **Déploiement** : une fois le build validé, le site est déployé dans le vaste monde du web.
+- **Déploiement** :  la version optimisée du site est générée automatiquement et une fois validé, le site est déployé dans le vaste monde du web.
 
 Ce processus garantit une mise en production rapide, fiable et sans manipulation manuelle.
 

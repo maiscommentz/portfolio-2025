@@ -12,21 +12,21 @@
                     </div>
                     <div class="flex flex-col md:flex-row space-x-0 md:space-x-6 ">
                         <a v-if="project.demo" :href="project.demo_link">
-                            <Button type="tertiary" active class="mt-6 w-full md:w-fit">
+                            <ButtonComponent type="tertiary" active class="mt-6 w-full md:w-fit">
                                 {{ $t('utils.projects.demo') }}
-                            </Button>
+                            </ButtonComponent>
                         </a>
-                        <Button v-else type="tertiary" class="mt-6 w-full md:w-fit line-through">
+                        <ButtonComponent v-else type="tertiary" class="mt-6 w-full md:w-fit line-through">
                                 {{ $t('utils.projects.demo') }}
-                        </Button>
+                        </ButtonComponent>
                         <a v-if="project.source" :href="project.source_link">
-                            <Button type="tertiary" active class="mt-6 w-full md:w-fit" :href="project.link" target="_blank">
+                            <ButtonComponent type="tertiary" active class="mt-6 w-full md:w-fit" :href="project.link" target="_blank">
                                 {{ $t('utils.projects.source') }}
-                            </Button>
+                            </ButtonComponent>
                         </a>
-                        <Button v-else type="tertiary" class="mt-6 w-full md:w-fit line-through">
+                        <ButtonComponent v-else type="tertiary" class="mt-6 w-full md:w-fit line-through">
                                 {{ $t('utils.projects.source') }}
-                        </Button>
+                        </ButtonComponent>
                     </div>
                 </div>
             </div>
@@ -53,12 +53,12 @@
     </main>
 </template>
 <script setup lang="ts">
-import Button from '@/components/Button.vue'
-import { ref, computed } from 'vue'
+import ButtonComponent from '@/components/ButtonComponent.vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 const route = useRoute()
-const { t, tm } = useI18n()
+const { tm } = useI18n()
 
 const projectId = route.params.projectId as string
 const project = computed(() => {

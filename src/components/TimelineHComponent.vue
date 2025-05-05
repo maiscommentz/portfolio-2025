@@ -6,27 +6,30 @@
       <path d="M0, 200 C500, 500 500, 0 1000, 200" class="stroke-cBlack" fill="none" stroke-width="2" />
 
       <!-- Dots -->
-      <circle v-for="(point, i) in points" :key="i"
-              :cx="point.cx" :cy="point.cy"
-              r="10" class="fill-cBlack timeline-dot" />
+      <circle
+        v-for="(point, i) in points" :key="i"
+        :cx="point.cx" :cy="point.cy"
+        r="10" class="fill-cBlack timeline-dot" />
 
       <!-- Lines -->
-      <line v-for="(point, i) in points" :key="'line' + i"
-            :x1="point.cx" :y1="point.cy" :x2="point.cx" :y2="point.offsetY"
-            class="stroke-cBlack" stroke-width="2" />
+      <line
+        v-for="(point, i) in points" :key="'line' + i"
+        :x1="point.cx" :y1="point.cy" :x2="point.cx" :y2="point.offsetY"
+        class="stroke-cBlack" stroke-width="2" />
     </svg>
 
     <!-- Labels (HTML) -->
-    <div v-for="(point, i) in points" :key="'label' + i"
-        class="absolute label z-10"
-        :style="labelStyles[i]">
-        <div class="bg-cBlack text-cWhite p-3 rounded-lg w-[300px]">
-            <p>{{ point.title }}</p>
-            <div class="flex w-full justify-between items-center mt-1">
-                <p class=" text-cGreen">{{ point.date }}</p>
-                <!-- <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" /> -->
-            </div>
-        </div>
+    <div
+      v-for="(point, i) in points" :key="'label' + i"
+      class="absolute label z-10"
+      :style="labelStyles[i]">
+      <div class="bg-cBlack text-cWhite p-3 rounded-lg w-[300px]">
+          <p>{{ point.title }}</p>
+          <div class="flex w-full justify-between items-center mt-1">
+              <p class=" text-cGreen">{{ point.date }}</p>
+              <!-- <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" /> -->
+          </div>
+      </div>
     </div>
   </div>
 </template>

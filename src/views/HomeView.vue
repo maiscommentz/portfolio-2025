@@ -7,8 +7,8 @@
                     <h1 style="font-size: 47px; line-height: 1;" class="md:text-5xl font-semibold">{{ $t('hero.title') }}</h1>
                     <p class="text-base md:text-lg mt-4">{{ $t('hero.subtitle')}}</p>
                     <div class="flex flex-col md:flex-row mt-8 space-y-6 md:space-y-0 md:space-x-6">
-                        <RouterLink to="#contact"><Button type="primary" class="w-full">{{ $t('hero.cta1') }}</Button></RouterLink>
-                        <RouterLink to="/cv"><Button type="secondary" class="w-full">{{ $t('hero.cta2') }}</Button></RouterLink>
+                        <RouterLink to="#contact"><ButtonComponent type="primary" class="w-full">{{ $t('hero.cta1') }}</ButtonComponent></RouterLink>
+                        <RouterLink to="/cv"><ButtonComponent type="secondary" class="w-full">{{ $t('hero.cta2') }}</ButtonComponent></RouterLink>
                     </div>
                 </div>
                 <div class="hidden w-full md:w-1/2 md:flex justify-center">
@@ -26,10 +26,10 @@
         </div>
         <!-- Section About -->
         <div id="about" class="container mx-auto py-12 px-6">
-            <Title>
-                <template v-slot:title>{{ $t('about.title') }}</template>
-                <template v-slot:subtitle>{{ $t('about.subtitle') }}</template>
-            </Title>
+            <TitleComponent>
+                <template #title>{{ $t('about.title') }}</template>
+                <template #subtitle>{{ $t('about.subtitle') }}</template>
+            </TitleComponent>
             <div class="flex flex-col md:flex-row justify-center md:space-y-0 space-y-6 md:space-x-16">
                 <img src="/images/about.jpg" alt="Photos de moi" class="w-full md:w-1/3 object-cover rounded-lg" />
                 <div class="flex flex-col w-full md:w-2/3 justify-between">
@@ -40,36 +40,36 @@
         </div>
         <!-- Section Technologies -->
         <div class="container mx-auto py-24 px-6">
-            <Carousel />
+            <CarouselComponent />
         </div>
         <!-- Section Career -->
         <div id="career" class="container mx-auto py-12 px-6">
-            <Title>
-                <template v-slot:title>{{ $t('career.title') }}</template>
-                <template v-slot:subtitle>{{ $t('career.subtitle') }}</template>
-            </Title>
-            <TimelineH v-if="windowWidth >= 1024"/>
-            <TimelineV v-else/>
+            <TitleComponent>
+                <template #title>{{ $t('career.title') }}</template>
+                <template #subtitle>{{ $t('career.subtitle') }}</template>
+            </TitleComponent>
+            <TimelineHComponent v-if="windowWidth >= 1024"/>
+            <TimelineVComponent v-else/>
         </div>
         <!-- Section Projects -->
         <div id="projects" class="container mx-auto py-12 px-6">
-            <Title>
-                <template v-slot:title>{{ $t('projects.title') }}</template>
-                <template v-slot:subtitle>{{ $t('projects.subtitle') }}</template>
-            </Title>
+            <TitleComponent>
+                <template #title>{{ $t('projects.title') }}</template>
+                <template #subtitle>{{ $t('projects.subtitle') }}</template>
+            </TitleComponent>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Project v-for="item in projects" :key="item.id" :data="item"/>
+                <ProjectCardComponent v-for="item in projects" :key="item.id" :data="item"/>
             </div>
         </div>
     </main>
 </template>
 <script setup lang="ts">
-import Button from '@/components/Button.vue'
-import Title from '@/components/Title.vue'
-import Carousel from '@/components/Carousel.vue'
-import TimelineH from '@/components/TimelineH.vue'
-import TimelineV from '@/components/TimelineV.vue'
-import Project from '@/components/Project.vue'
+import ButtonComponent from '@/components/ButtonComponent.vue'
+import TitleComponent from '@/components/TitleComponent.vue'
+import CarouselComponent from '@/components/CarouselComponent.vue'
+import TimelineHComponent from '@/components/TimelineHComponent.vue'
+import TimelineVComponent from '@/components/TimelineVComponent.vue'
+import ProjectCardComponent from '@/components/ProjectCardComponent.vue'
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 

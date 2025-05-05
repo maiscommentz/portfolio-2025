@@ -11,7 +11,10 @@
 </template>
 <script setup lang="ts">
 defineProps({
-    type: String,
+    type: {
+        type: String,
+        default: 'primary'
+    },
     active: Boolean
 })
 </script>

@@ -7,23 +7,27 @@
   
         <!-- Burger Menu Icon (visible on small screens) -->
         <div class="md:hidden">
-          <button @click="isMenuOpen = !isMenuOpen" class="relative h-8 w-8 focus:outline-none">
+          <button class="relative h-8 w-8 focus:outline-none" @click="isMenuOpen = !isMenuOpen">
             <!-- Burger Icon -->
-            <svg class="absolute inset-0 transition-opacity duration-300 ease-in-out"
+            <svg 
+              class="absolute inset-0 transition-opacity duration-300 ease-in-out"
               :class="isMenuOpen ? 'opacity-0' : 'opacity-100'"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
             >
-              <path class="fill-cBlack"
+              <path 
+                class="fill-cBlack"
                 d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
               />
             </svg>
 
             <!-- Close Icon -->
-            <svg class="absolute inset-0 transition-opacity duration-300 ease-in-out"
+            <svg
+              class="absolute inset-0 transition-opacity duration-300 ease-in-out"
               :class="isMenuOpen ? 'opacity-100' : 'opacity-0'"
               viewBox="0 0 19 20" xmlns="http://www.w3.org/2000/svg"
             >
-              <path class="fill-cBlack"
+              <path
+                class="fill-cBlack"
                 d="M13.414 12l4.95-4.95a1 1 0 0 0-1.414-1.414L12 10.586l-4.95-4.95A1 1 0 0 0 5.636 7.05l4.95 4.95-4.95 4.95a1 1 0 0 0 1.414 1.414l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414-1.414z"
               />
             </svg>

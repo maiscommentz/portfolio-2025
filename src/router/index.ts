@@ -9,19 +9,19 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "",
     name: "home",
-    component: () => import('../views/Home.vue')
+    component: () => import('@/views/HomeView.vue')
   },
   {
     path: "/project/:projectId",
     name: "project",
-    component: () => import('../views/Project.vue')
+    component: () => import('@/views/ProjectView.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes: routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to, from) {
     if (to.hash) {
       if (from.name === to.name) {
         return { el: to.hash, behavior: 'smooth' }
@@ -33,7 +33,7 @@ const router = createRouter({
   }
 })
 
-router.afterEach((to, from) => {
+router.afterEach((to) => {
   if (to.hash) {
     setTimeout(() => {
       history.replaceState(null, '', to.path);

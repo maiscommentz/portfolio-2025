@@ -15,19 +15,19 @@
     </div>
     <RouterView v-slot="{ Component }">
       <!-- Header -->
-      <Header/>
+      <HeaderComponent/>
       <!-- Main Content Section -->
       <component :is="Component" />
       <!-- Footer -->
-      <Footer/>
+      <FooterComponent/>
     </RouterView>
   </div>
 </template>
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import { gsap } from 'gsap'
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 
 const bigBall = ".cursor__ball--big";
 const smallBall = ".cursor__ball--small"

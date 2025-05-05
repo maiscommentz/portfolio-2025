@@ -1,6 +1,6 @@
 <template>
     <Vue3Marquee :clone="true" :duration="15">
-        <div v-for="img in imgArray" class="flex items-center justify-center w-full h-full bg-cBlack p-8 rounded-lg ml-8">
+        <div v-for="img in imgArray" :key="img.alt" class="flex items-center justify-center w-full h-full bg-cBlack p-8 rounded-lg ml-8">
             <img :src="img.src" :alt="img.alt" class="w-16 max-h-16 object-contain" />
         </div>
     </Vue3Marquee>

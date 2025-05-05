@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply text-cBlack;
+    @apply text-lg;
+    font-family: 'Fira Code', sans-serif;
+    font-weight: 400;
+    cursor: none;
+    background-color: #FFF;
+}
+
+.cursor {
+    pointer-events: none;
+}
+
+.cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+}

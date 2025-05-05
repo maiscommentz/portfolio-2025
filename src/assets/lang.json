@@ -1,5 +1,100 @@
 {
     "fr": {
-        
+        "hero": {
+            "title": "Salut, moi c'est Filipe Ferreira!",
+            "subtitle": "Développeur basé à Fribourg, Suisse.",
+            "cta1": "me contacter",
+            "cta2": "voir mon cv"
+        },
+        "about": {
+            "title": "À propos de moi",
+            "subtitle": "Qui suis-je? Rencontrez la personne derrière le code et les maquettes: un méange de mon histoire et de mes passions",
+            "description": "Je suis {bold}Filipe Ferreira{nobold}, un développeur animé par l'envie de transformer les idées en {bold}expériences digitales uniques{nobold}.{br}Dans mon temps libre, je trouve mon équilibre entre {bold}le sport, les voyages et les jeux-vidéos{nobold}. Ce sont les échappatoires qui me permettent de rester {bold}en forme et concentré{nobold}.{br}Chaque projet pour moi est une aventure, une opportunité de mélanger ma passion pour le développement et design avec mes intérêts variés."
+        },
+        "career": {
+            "title": "Mon parcours",
+            "subtitle": "Parcours académique et professionnel: les étapes clés de mon évolution en tant que développeur et designer.",
+            "size" : "4",
+            "items": [
+                {
+                    "title": "Apprentissage à l'EMF Fribourg",
+                    "date": "09/2019 - 07/2023"
+                },
+                {
+                    "title": "Stage de développeur web à l'Agence MiNT",
+                    "date": "08/2022 - 06/2023"
+                },
+                {
+                    "title": "Bachelor en Génie Logiciel à la HEIA-FR",
+                    "date": "09/2023 - maintenant"
+                },
+                {
+                    "title": "CEO chez kodee",
+                    "date": "11/2023 - maintenant"
+                }
+            ]
+        },
+        "projects": {
+            "title": "Mes oeuvres",
+            "subtitle": "Découvrez les fruits de mon travail: une vitrine de mes réalisations les plus aboutis, reflétant mon expertise technique et ma créativité",
+            "size": "5",
+            "items": {
+                "flashlog": {
+                    "image": "flashlog.png",
+                    "title": "{bold}Flashlog{nobold} App mobile pour partager ses ascensions",
+                    "date": "décembre 2024",
+                    "source": false,
+                    "source_link": "",
+                    "demo": false,
+                    "demo_link": "",
+                    "description": "Flashlog est une application mobile qui permet aux utilisateurs de partager leurs ascensions et de se connecter avec d'autres passionnés d'escalade. L'application offre une interface conviviale et intuitive, permettant aux utilisateurs de créer, modifier et visionner leur profil, de suivre d'autres profils et avant tout de partager les blocs qu'on a grimpé dans un des lieux d'escalade disponibles. Ajouté à cela, on retrouve un système de classement avec des points par lieu d'escalade.",
+                    "stack": "Jetpack Compose, Kotlin, Spring Boot, MySQL, Docker",
+                    "myrole": "- Création de maquettes et prototypes sur Figma{br}- Conception des routes de l'API Rest{br}- Conception du schéma de la base de données{br}- Développement de l'application mobile avec Jetpack Compose et Kotlin{br}- Aide au développement de l'API Rest avec Spring Boot{br}- Aide à la mise en place de la base de données avec MySQL{br}- Aide à la mise en place de l'environnement de développement avec Docker{br}- Aide à la mise en place du déploiement automatique de l'API Rest avec Docker et Gitlab CI/CD",
+                    "gallery": [
+                        {
+                            "src": "image1.png",
+                            "alt": "Maquette de l'application mobile"
+                        },
+                        {
+                            "src": "image3.png",
+                            "alt": "Architecture du backend"
+                        },
+                        {
+                            "src": "image2.png",
+                            "alt": "Schéma de la base de données"
+                        }
+                    ]
+                },
+                "kodee": {
+                    "image": "kodee.png",
+                    "title": "{bold}kodee{nobold} Contribution de loin comme de près à tous les projets réalisés",
+                    "date": "novembre 2023",
+                    "source": false,
+                    "source_link": "",
+                    "demo": true,
+                    "demo_link": "https://kodee.ch",
+                    "description": "kodee est une agence de développement web qui se concentre sur la création de solutions digitales sur mesure pour ses clients. L'agence offre une gamme complète de services, allant de la conception à la maintenance, en passant par le développement et le déploiement. Grâce à notre équipe d'étudiants en école d'ingénieur, kodee s'engage à fournir des produits de haute qualité qui répondent aux besoins spécifiques de chaque client.",
+                    "stack": "Vue.js, Tailwind CSS, Laravel, MySQL, Docker, et bien plus...",
+                    "myrole": "- Conception des maquettes et prototypes sur Figma{br}- Développement frontend avec Vue.js et Tailwind CSS{br}- Mmise en place du déploiement automatique avec Docker et Gitlab CI/CD"
+                }
+            }
+        },
+        "contact": {
+            "title": "Besoin de me contacter?",
+            "email": "pro.maiscommentz{at}gmail.com",
+            "linkedin": "filipe-casimiro-ferreira",
+            "github": "maiscommentz"
+        },
+        "utils": {
+            "seemore": "voir plus",
+            "projects": {
+                "description": "Description",
+                "stack": "Technologies utilisées",
+                "myrole": "Ma contribution",
+                "gallery": "Galerie",
+                "source": "voir le code source",
+                "demo": "voir la démo"
+            }
+        }
     }
 }

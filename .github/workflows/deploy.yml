@@ -1,0 +1,30 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "[⚙️] Checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "[📦] Install dependencies"
+        run: npm install
+
+      - name: "[🔧] Build project"
+        run: npm run build
+
+      - name: "[🚀] Deploy to filipeferreira.ch"
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: "dist/*"
+          target:
+          strip_components: 1

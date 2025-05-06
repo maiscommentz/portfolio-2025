@@ -4,7 +4,7 @@
       <div class="career-label-label bg-cBlack text-cWhite p-3 rounded-lg clickable h-full w-full">
         <p>{{ label.title }}</p>
         <div class="flex w-full justify-between items-center mt-1">
-          <p class=" text-cGreen">{{ label.date }}</p>
+          <p class=" text-cPrimary">{{ label.date }}</p>
           <!-- <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" /> -->
         </div>
       </div>

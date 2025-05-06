@@ -9,7 +9,7 @@ export default {
       colors: {
         'cBlack': '#1F1F1F',
         'cWhite': '#FFFFFF',
-        'cGreen': '#B9FF69',
+        'cPrimary': '#FACB4C',
         'cGray': '#E9E9E9',
       },
     },

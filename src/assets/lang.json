@@ -94,6 +94,12 @@
                 "gallery": "Galerie",
                 "source": "voir le code source",
                 "demo": "voir la démo"
+            },
+            "notfound": {
+                "title": "404",
+                "subtitle": "Oups !",
+                "description": "La page que vous recherchez semble introuvable.",
+                "button": "Retour à l'accueil"
             }
         }
     }

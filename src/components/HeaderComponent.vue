@@ -35,11 +35,13 @@
         </div>
         
         <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-6 [&>li:hover]:underline [&>li]:underline-offset-4">
+        <ul class="hidden md:flex space-x-6 [&>li:hover]:underline [&>li]:underline-offset-4 items-center">
           <li><RouterLink to="/#about">à propos</RouterLink></li>
           <li><RouterLink to="/#career">parcours</RouterLink></li>
           <li><RouterLink to="/#projects">projets</RouterLink></li>
           <li><RouterLink to="/#contact">contact</RouterLink></li>
+          <li></li>
+          <ThemeButtonComponent />
         </ul>
       </nav>
 
@@ -69,6 +71,7 @@
   <script setup lang="ts">
   import { ref } from 'vue';
   import { RouterLink } from 'vue-router';
+  import ThemeButtonComponent from '@/components/ThemeButtonComponent.vue';
   
   const isMenuOpen = ref(false);
   </script>

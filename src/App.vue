@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col min-h-screen dark:bg-cBlack bg-cWhite">
     <!-- Custom cursor -->
     <div class="cursor hidden lg:flex">
       <div class="cursor__ball cursor__ball--big fill-[#e0e0e0]">
@@ -44,6 +44,16 @@ function onMouseMove(e: MouseEvent) {
     y: e.pageY - window.scrollY - 5
   })
 }
+
+// Set light theme by default in localStorage
+if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'light');
+}
+// Set dark theme if the user has selected it in localStorage
+const isDark = localStorage.getItem('theme') === 'light'; 
+if (isDark) {
+    document.body.classList.remove('dark');
+} else {
+    document.body.classList.add('dark');
+}
 </script>
-<style scoped>
-</style>

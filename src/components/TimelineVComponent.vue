@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-full h-full overflow-x-hidden">
     <div v-for="(label, index) in labels" :key="label.title" class="career-label">
-      <div class="career-label-label bg-cBlack text-cWhite p-3 rounded-lg clickable h-full w-full">
+      <div class="career-label-label bg-cBlack text-cWhite dark:border-cPrimary dark:border-2 p-3 rounded-lg clickable h-full w-full">
         <p>{{ label.title }}</p>
         <div class="flex w-full justify-between items-center mt-1">
           <p class=" text-cPrimary">{{ label.date }}</p>
@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="career-label-arrow flex justify-center items-center w-full h-full my-2">
-        <svg v-if="index != labels.length - 1" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-cBlack" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg v-if="index != labels.length - 1" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-cBlack dark:text-cWhite" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>

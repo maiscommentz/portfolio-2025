@@ -3,19 +3,19 @@
     <!-- SVG -->
     <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" class="w-full overflow-visible">
       <!-- Curved path -->
-      <path d="M0, 200 C500, 500 500, 0 1000, 200" class="stroke-cBlack" fill="none" stroke-width="2" />
+      <path d="M0, 200 C500, 500 500, 0 1000, 200" class="stroke-cBlack dark:stroke-cWhite" fill="none" stroke-width="2" />
 
       <!-- Dots -->
       <circle
         v-for="(point, i) in points" :key="i"
         :cx="point.cx" :cy="point.cy"
-        r="10" class="fill-cBlack timeline-dot" />
+        r="10" class="fill-cBlack dark:fill-cWhite timeline-dot" />
 
       <!-- Lines -->
       <line
         v-for="(point, i) in points" :key="'line' + i"
         :x1="point.cx" :y1="point.cy" :x2="point.cx" :y2="point.offsetY"
-        class="stroke-cBlack" stroke-width="2" />
+        class="stroke-cBlack dark:stroke-cWhite" stroke-width="2" />
     </svg>
 
     <!-- Labels (HTML) -->
@@ -23,7 +23,7 @@
       v-for="(point, i) in points" :key="'label' + i"
       class="absolute label z-10"
       :style="labelStyles[i]">
-      <div class="bg-cBlack text-cWhite p-3 rounded-lg w-[300px]">
+      <div class="bg-cBlack text-cWhite dark:outline-cPrimary dark:outline-2 dark:outline p-3 rounded-lg w-[300px]">
           <p>{{ point.title }}</p>
           <div class="flex w-full justify-between items-center mt-1">
               <p class=" text-cPrimary">{{ point.date }}</p>

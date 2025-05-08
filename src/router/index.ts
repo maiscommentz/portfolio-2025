@@ -15,6 +15,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/project/:projectId",
     name: "project",
     component: () => import('@/views/ProjectView.vue')
+  },
+  {
+    path: "/:notFound",
+    name: "notFound",
+    component: () => import("../views/NotFoundView.vue"),
   }
 ]
 

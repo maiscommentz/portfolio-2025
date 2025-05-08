@@ -45,12 +45,15 @@ function onMouseMove(e: MouseEvent) {
   })
 }
 
-const isDark = localStorage.getItem('theme') === 'light';
+// Set light theme by default in localStorage
+if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'light');
+}
+// Set dark theme if the user has selected it in localStorage
+const isDark = localStorage.getItem('theme') === 'light'; 
 if (isDark) {
-    // Remove dark class from body element
     document.body.classList.remove('dark');
 } else {
-    // Add dark class to body element
     document.body.classList.add('dark');
 }
 </script>

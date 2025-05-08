@@ -75,7 +75,7 @@
                     "demo_link": "https://kodee.ch",
                     "description": "kodee est une agence de développement web qui se concentre sur la création de solutions digitales sur mesure pour ses clients. L'agence offre une gamme complète de services, allant de la conception à la maintenance, en passant par le développement et le déploiement. Grâce à notre équipe d'étudiants en école d'ingénieur, kodee s'engage à fournir des produits de haute qualité qui répondent aux besoins spécifiques de chaque client.",
                     "stack": "Vue.js, Tailwind CSS, Laravel, MySQL, Docker, et bien plus...",
-                    "myrole": "- Conception des maquettes et prototypes sur Figma{br}- Développement frontend avec Vue.js et Tailwind CSS{br}- Mmise en place du déploiement automatique avec Docker et Gitlab CI/CD"
+                    "myrole": "- Conception des maquettes et prototypes sur Figma{br}- Développement frontend avec Vue.js et Tailwind CSS{br}- Mise en place du déploiement automatique avec Docker et Gitlab CI/CD"
                 }
             }
         },

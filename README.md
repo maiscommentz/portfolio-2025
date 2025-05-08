@@ -30,7 +30,7 @@ Ce portfolio présente ce qu'il faut savoir sur moi, les technologies que j'util
 7. **Animations** - GSAP est utilisé pour apporter des transitions et animations dynamiques et engageantes.
 
 ## 🛤️ Améliorations futures
-- [ ] Ajout d'un thème sombre 
+- [x] Ajout d'un thème sombre 
 - [ ] Ajout de tests unitaires (Vitest ou Jest)
 - [ ] Ajout d'un écran de chargement à l'arrivée sur le site web
 - [ ] ENCORE plus d'animations

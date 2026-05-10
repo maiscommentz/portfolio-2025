@@ -12,7 +12,10 @@
                 </RouterLink>
             </div>
             <div class="flex min-h-48 max-h-48 w-full">
-                <img :src="'/images/projects/' + data.image" :alt="'Projet ' + data.id" class="flex h-full w-full outline outline-2 outline-cBlack dark:outline-cWhite object-cover rounded-lg" />
+                <div v-if="data.image_url" class="flex h-full w-full outline outline-2 outline-cBlack dark:outline-cWhite rounded-lg justify-center items-center p-6" :style="{ backgroundColor: data.color || '#ffffff' }">
+                    <img :src="data.image_url" :alt="'Projet ' + data.id" class="max-h-full max-w-full object-contain" />
+                </div>
+                <img v-else :src="'/images/projects/' + data.image" :alt="'Projet ' + data.id" class="flex h-full w-full outline outline-2 outline-cBlack dark:outline-cWhite object-cover rounded-lg" />
             </div>
         </div>
     </div>

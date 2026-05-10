@@ -14,7 +14,7 @@
         "career": {
             "title": "Mon parcours",
             "subtitle": "Parcours académique et professionnel: les étapes clés de mon évolution en tant que développeur et designer.",
-            "size" : "4",
+            "size": "4",
             "items": [
                 {
                     "title": "Apprentissage à l'EMF Fribourg",
@@ -39,6 +39,55 @@
             "subtitle": "Découvrez les fruits de mon travail: une vitrine de mes réalisations les plus aboutis, reflétant mon expertise technique et ma créativité",
             "size": "5",
             "items": {
+                "thecinemabill": {
+                    "image": "thecinemabill.png",
+                    "title": "{bold}The Cinema Bill{nobold} Convertis ton activité Letterboxd en ticket de caisse stylisé",
+                    "date": "avril 2026",
+                    "source": true,
+                    "source_link": "https://github.com/maiscommentz/thecinemabill",
+                    "demo": true,
+                    "demo_link": "https://thecinemabill.maiscommentz.ch",
+                    "description": "The Cinema Bill est une application web qui permet de convertir l'activité récente d'un profil Letterboxd en un ticket de caisse virtuel et personnalisable. Elle récupère les données via le flux RSS de Letterboxd et les enrichit avec l'API TMDB pour la durée, le réalisateur et les genres. Le ticket est généré avec des thèmes au choix et prêt à être partagé sur les réseaux sociaux.",
+                    "stack": "Next.js, TypeScript, Tailwind CSS, Framer Motion, Docker",
+                    "myrole": "- Développement frontend et backend avec Next.js{br}- Intégration de l'API TMDB et parsing du flux RSS Letterboxd{br}- Création de designs personnalisables et d'animations fluides avec Framer Motion{br}- Mise en place de l'intégration et du déploiement continus avec GitHub Actions et Docker",
+                    "gallery": {}
+                },
+                "pushie": {
+                    "image_url": "https://raw.githubusercontent.com/maiscommentz/pushie/main/media/icon.png",
+                    "color": "#E0F2FE",
+                    "title": "{bold}pushie{nobold} Ton petit compagnon de code directement dans VS Code",
+                    "date": "février 2026",
+                    "source": true,
+                    "source_link": "https://github.com/maiscommentz/pushie",
+                    "demo": true,
+                    "demo_link": "https://marketplace.visualstudio.com/items?itemName=maiscommentz.pushie",
+                    "description": "pushie est une extension VS Code qui ajoute un petit compagnon virtuel directement dans ton éditeur. Il réagit à tes commits avec 5 états différents selon ta productivité hebdomadaire. De plus, il intègre une fonctionnalité utilisant l'IA pour juger et commenter ton code avec une touche d'humour.",
+                    "stack": "TypeScript, HTML5, CSS, API VS Code",
+                    "myrole": "- Développement de l'extension VS Code complète{br}- Intégration des APIs d'IA (OpenAI, Groq){br}- Design des assets pixel art et animations{br}- Connexion à l'API GitHub pour le suivi des commits",
+                    "gallery_layout": "grid",
+                    "gallery": [
+                        {
+                            "src": "https://raw.githubusercontent.com/maiscommentz/pushie/main/media/epic.png",
+                            "alt": "État Epic de pushie"
+                        },
+                        {
+                            "src": "https://raw.githubusercontent.com/maiscommentz/pushie/main/media/happy.png",
+                            "alt": "État Happy de pushie"
+                        },
+                        {
+                            "src": "https://raw.githubusercontent.com/maiscommentz/pushie/main/media/neutral.png",
+                            "alt": "État Neutral de pushie"
+                        },
+                        {
+                            "src": "https://raw.githubusercontent.com/maiscommentz/pushie/main/media/sad.png",
+                            "alt": "État Sad de pushie"
+                        },
+                        {
+                            "src": "https://raw.githubusercontent.com/maiscommentz/pushie/main/media/dead.png",
+                            "alt": "État Dead Puddle de pushie"
+                        }
+                    ]
+                },
                 "flashlog": {
                     "image": "flashlog.png",
                     "title": "{bold}Flashlog{nobold} App mobile pour partager ses ascensions",
@@ -68,7 +117,7 @@
                 "kodee": {
                     "image": "kodee.png",
                     "title": "{bold}kodee{nobold} Contribution de loin comme de près à tous les projets réalisés",
-                    "date": "novembre 2023",
+                    "date": "novembre 2023 - maintenant",
                     "source": false,
                     "source_link": "",
                     "demo": true,

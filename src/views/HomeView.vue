@@ -80,7 +80,9 @@ const projects = computed(() => {
   return Object.entries(items).map(([key, value]) => ({
     id: key,
     title: t(`projects.items.${key}.title`),
-    image: value.image
+    image: value.image,
+    image_url: value.image_url,
+    color: value.color
   }))
 })
 

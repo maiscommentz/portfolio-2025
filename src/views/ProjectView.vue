@@ -68,13 +68,22 @@
 <script setup lang="ts">
 import ButtonComponent from '@/components/ButtonComponent.vue'
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+
 const route = useRoute()
+const router = useRouter()
 const { tm } = useI18n()
 
 const projectId = route.params.projectId as string
+const items = tm('projects.items') as Record<string, any>
+
+// Redirect to 404 if the project doesn't exist
+if (!items || !items[projectId]) {
+    router.replace('/404')
+}
+
 const project = computed(() => {
-    return tm(`projects.items.${projectId}`)
+    return items[projectId] || {}
 })
 </script>

@@ -71,20 +71,9 @@ import CarouselComponent from '@/components/CarouselComponent.vue'
 import TimelineHComponent from '@/components/TimelineHComponent.vue'
 import TimelineVComponent from '@/components/TimelineVComponent.vue'
 import ProjectCardComponent from '@/components/ProjectCardComponent.vue'
-import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { projects } from '@/data/projects'
 
-const { t, tm } = useI18n()
-const projects = computed(() => {
-  const items = tm('projects.items')
-  return Object.entries(items).map(([key, value]) => ({
-    id: key,
-    title: t(`projects.items.${key}.title`),
-    image: value.image,
-    image_url: value.image_url,
-    color: value.color
-  }))
-})
 
 
 const windowWidth = ref(window.innerWidth)

@@ -8,7 +8,7 @@
                     <p class="text-base md:text-lg mt-4">{{ $t('hero.subtitle')}}</p>
                     <div class="flex flex-col md:flex-row mt-8 space-y-6 md:space-y-0 md:space-x-6">
                         <RouterLink to="#contact"><ButtonComponent type="primary" class="w-full">{{ $t('hero.cta1') }}</ButtonComponent></RouterLink>
-                        <RouterLink to="/cv"><ButtonComponent type="secondary" class="w-full">{{ $t('hero.cta2') }}</ButtonComponent></RouterLink>
+                        <a href="/cv-filipe-casimiro-ferreira.pdf" target="_blank" rel="noopener noreferrer"><ButtonComponent type="secondary" class="w-full">{{ $t('hero.cta2') }}</ButtonComponent></a>
                     </div>
                 </div>
                 <div class="hidden w-full md:w-1/2 md:flex justify-center dark:bg-cWhite rounded-3xl">

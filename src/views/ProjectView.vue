@@ -34,40 +34,19 @@
                 </div>
             </div>
         </div>
-        <div class="container mx-auto py-6 px-6 dark:text-cWhite">
-            <h1 class="text-3xl font-semibold" v-html="$t(`utils.projects.description`)"></h1>
-            <p class="text-lg mt-4" v-html="project.description"></p>
-        </div>
-        <div class="container mx-auto py-6 px-6 dark:text-cWhite">
-            <h1 class="text-3xl font-semibold" v-html="$t(`utils.projects.stack`)"></h1>
-            <p class="text-lg mt-4" v-html="project.stack"></p>
-        </div>
-        <div class="container mx-auto py-6 px-6 dark:text-cWhite">
-            <h1 class="text-3xl font-semibold" v-html="$t(`utils.projects.myrole`)"></h1>
-            <p class="text-lg mt-4" v-html="project.myrole"></p>
-        </div>
-        <div v-if="project.gallery && project.gallery.length" class="container mx-auto py-6 px-6 dark:text-cWhite">
-            <h1 class="text-3xl font-semibold" v-html="$t(`utils.projects.gallery`)"></h1>
-            <div v-if="project.gallery_layout === 'grid'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-6 mb-24">
-                <div v-for="(image, index) in project.gallery" :key="index" class="w-full flex flex-col justify-center items-center">
-                    <img v-if="image.src.startsWith('http')" :src="image.src" :alt="image.alt" class="max-h-[80vh] md:max-h-[60vh] object-contain mb-4 drop-shadow-md" />
-                    <img v-else :src="'/images/projects/' + projectId + '/' + image.src" :alt="image.alt" class="max-h-[80vh] md:max-h-[60vh] object-contain mb-4 drop-shadow-md" />
-                    <p class="text-sm text-center" v-html="`alt: ` + image.alt"></p>
-                </div>
-            </div>
-            <div v-else>
-                <div v-for="(image, index) in project.gallery" :key="index" class="w-full flex flex-col justify-center mt-6 mb-24">
-                    <img v-if="image.src.startsWith('http')" :src="image.src" :alt="image.alt" class="max-h-[80vh] object-contain rounded-lg justify-center" />
-                    <img v-else :src="'/images/projects/' + projectId + '/' + image.src" :alt="image.alt" class="max-h-[80vh] object-contain rounded-lg justify-center" />
-                    <p class="text-lg text-center mt-4" v-html="`alt: ` + image.alt"></p>
-                </div>
-            </div>
-        </div>
+        <ProjectSectionComponent
+            v-for="(section, index) in project.sections"
+            :key="index"
+            :section="section"
+            :project-id="projectId"
+        />
+        <div class="pb-24"></div>
     </main>
 </template>
 <script setup lang="ts">
 import ButtonComponent from '@/components/ButtonComponent.vue'
-import { computed } from 'vue'
+import ProjectSectionComponent from '@/components/ProjectSectionComponent.vue'
+import { computed, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { projects } from '@/data/projects'
 import type { Project } from '@/data/projects'
@@ -75,16 +54,17 @@ import type { Project } from '@/data/projects'
 const route = useRoute()
 const router = useRouter()
 
-const projectId = route.params.projectId as string
-
-const projectObj = projects.find(p => p.id === projectId)
-
-// Redirect to 404 if the project doesn't exist
-if (!projectObj) {
-    router.replace('/404')
-}
+// Reactive: vue-router reuses this component when only the param changes.
+const projectId = computed(() => route.params.projectId as string)
 
 const project = computed<Partial<Project>>(() => {
-    return projectObj || {}
+    return projects.find(p => p.id === projectId.value) || {}
+})
+
+// Redirect to 404 if the project doesn't exist
+watchEffect(() => {
+    if (!project.value.id) {
+        router.replace('/404')
+    }
 })
 </script>

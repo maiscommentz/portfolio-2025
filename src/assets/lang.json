@@ -47,10 +47,6 @@
         "utils": {
             "seemore": "voir plus",
             "projects": {
-                "description": "Description",
-                "stack": "Technologies utilisées",
-                "myrole": "Ma contribution",
-                "gallery": "Galerie",
                 "source": "voir le code source",
                 "demo": "voir la démo"
             },

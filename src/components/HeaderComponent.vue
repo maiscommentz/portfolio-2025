@@ -41,7 +41,7 @@
           <li><RouterLink to="/#projects">{{ $t('nav.projects') }}</RouterLink></li>
           <li><RouterLink to="/#contact">{{ $t('nav.contact') }}</RouterLink></li>
           <li></li>
-          <li><LanguageButtonComponent /></li>
+          <LanguageButtonComponent />
           <ThemeButtonComponent />
         </ul>
       </nav>
@@ -64,7 +64,7 @@
             <li @click="isMenuOpen = false"><RouterLink to="/#projects">{{ $t('nav.projects') }}</RouterLink></li>
             <li @click="isMenuOpen = false"><RouterLink to="/#contact">{{ $t('nav.contact') }}</RouterLink></li>
             <li></li>
-            <li class="w-full flex justify-between items-center">
+            <li class="w-full flex items-center space-x-6">
               <LanguageButtonComponent />
               <ThemeButtonComponent />
             </li>

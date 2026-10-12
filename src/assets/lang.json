@@ -1,20 +1,30 @@
 {
     "fr": {
+        "meta": {
+            "title": "Filipe Casimiro Ferreira - Développeur logiciel, web et mobile",
+            "description": "Portfolio de Filipe Casimiro Ferreira, développeur logiciel, web et mobile basé à Fribourg, en Suisse."
+        },
+        "nav": {
+            "about": "à propos",
+            "career": "parcours",
+            "projects": "projets",
+            "contact": "contact"
+        },
         "hero": {
             "title": "Salut, moi c'est Filipe Casimiro Ferreira!",
             "subtitle": "Développeur basé à Fribourg, Suisse.",
             "cta1": "me contacter",
-            "cta2": "voir mon cv"
+            "cta2": "voir mon cv",
+            "cvLink": "/cv-filipe-casimiro-ferreira.pdf"
         },
         "about": {
             "title": "À propos de moi",
-            "subtitle": "Qui suis-je? Rencontrez la personne derrière le code et les maquettes: un méange de mon histoire et de mes passions",
+            "subtitle": "Qui suis-je? Rencontrez la personne derrière le code et les maquettes: un mélange de mon histoire et de mes passions",
             "description": "Je suis {bold}Filipe Casimiro Ferreira{nobold}, un développeur animé par l'envie de transformer les idées en {bold}expériences digitales uniques{nobold}.{br}Dans mon temps libre, je trouve mon équilibre entre {bold}le sport, les voyages et les jeux-vidéos{nobold}. Ce sont les échappatoires qui me permettent de rester {bold}en forme et concentré{nobold}.{br}Chaque projet pour moi est une aventure, une opportunité de mélanger ma passion pour le développement et design avec mes intérêts variés."
         },
         "career": {
             "title": "Mon parcours",
             "subtitle": "Parcours académique et professionnel: les étapes clés de mon évolution en tant que développeur et designer.",
-            "size": "4",
             "items": [
                 {
                     "title": "Apprentissage à l'EMF Fribourg",
@@ -46,6 +56,21 @@
         },
         "utils": {
             "seemore": "voir plus",
+            "projectAlt": "Projet {name}",
+            "language": {
+                "label": "Changer de langue",
+                "fr": "Français",
+                "en": "English"
+            },
+            "alt": {
+                "hero": "Illustration d'un développeur web",
+                "about": "Photo de moi",
+                "signature": "Signature de Filipe",
+                "email": "Icône e-mail",
+                "linkedin": "Icône LinkedIn",
+                "github": "Icône GitHub",
+                "contact": "Illustration d'une boîte aux lettres"
+            },
             "projects": {
                 "source": "voir le code source",
                 "demo": "voir la démo"
@@ -55,6 +80,90 @@
                 "subtitle": "Oups !",
                 "description": "La page que vous recherchez semble introuvable.",
                 "button": "Retour à l'accueil"
+            }
+        }
+    },
+    "en": {
+        "meta": {
+            "title": "Filipe Casimiro Ferreira - Software, web and mobile developer",
+            "description": "Portfolio of Filipe Casimiro Ferreira, a software, web and mobile developer based in Fribourg, Switzerland."
+        },
+        "nav": {
+            "about": "about",
+            "career": "career",
+            "projects": "projects",
+            "contact": "contact"
+        },
+        "hero": {
+            "title": "Hi, I'm Filipe Casimiro Ferreira!",
+            "subtitle": "Developer based in Fribourg, Switzerland.",
+            "cta1": "get in touch",
+            "cta2": "see my resume",
+            "cvLink": "/cv-filipe-casimiro-ferreira-en.pdf"
+        },
+        "about": {
+            "title": "About me",
+            "subtitle": "Who am I? Meet the person behind the code and the mockups: a mix of where I come from and what I love",
+            "description": "I'm {bold}Filipe Casimiro Ferreira{nobold}, a developer driven by turning ideas into {bold}digital experiences that stand out{nobold}.{br}Outside of work, I find my balance between {bold}sport, travelling and video games{nobold}. They're the escapes that keep me {bold}fit and focused{nobold}.{br}Every project is an adventure to me, a chance to blend my passion for development and design with my many interests."
+        },
+        "career": {
+            "title": "My career",
+            "subtitle": "Academic and professional path: the key steps in how I grew as a developer and designer.",
+            "items": [
+                {
+                    "title": "Apprenticeship at EMF Fribourg",
+                    "date": "09/2019 - 07/2023"
+                },
+                {
+                    "title": "Web developer internship at Agence MiNT",
+                    "date": "08/2022 - 06/2023"
+                },
+                {
+                    "title": "BSc in Software Engineering at HEIA-FR",
+                    "date": "09/2023 - present"
+                },
+                {
+                    "title": "Full-stack web developer at kodee",
+                    "date": "11/2023 - present"
+                }
+            ]
+        },
+        "projects": {
+            "title": "My work",
+            "subtitle": "A look at what I've built: a showcase of my most complete projects, where my technical skills and my creativity meet"
+        },
+        "contact": {
+            "title": "Want to get in touch?",
+            "email": "hello{at}casimiroferreira.ch",
+            "linkedin": "filipe-casimiro-ferreira",
+            "github": "maiscommentz"
+        },
+        "utils": {
+            "seemore": "see more",
+            "projectAlt": "{name} project",
+            "language": {
+                "label": "Change language",
+                "fr": "Français",
+                "en": "English"
+            },
+            "alt": {
+                "hero": "Illustration of a web developer",
+                "about": "Photo of me",
+                "signature": "Filipe's signature",
+                "email": "Email icon",
+                "linkedin": "LinkedIn icon",
+                "github": "GitHub icon",
+                "contact": "Illustration of a mailbox"
+            },
+            "projects": {
+                "source": "view the source code",
+                "demo": "view the demo"
+            },
+            "notfound": {
+                "title": "404",
+                "subtitle": "Oops!",
+                "description": "The page you're looking for can't be found.",
+                "button": "Back to home"
             }
         }
     }

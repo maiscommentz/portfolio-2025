@@ -8,11 +8,11 @@
                     <p class="text-base md:text-lg mt-4">{{ $t('hero.subtitle')}}</p>
                     <div class="flex flex-col md:flex-row mt-8 space-y-6 md:space-y-0 md:space-x-6">
                         <RouterLink to="#contact"><ButtonComponent type="primary" class="w-full">{{ $t('hero.cta1') }}</ButtonComponent></RouterLink>
-                        <a href="/cv-filipe-casimiro-ferreira.pdf" target="_blank" rel="noopener noreferrer"><ButtonComponent type="secondary" class="w-full">{{ $t('hero.cta2') }}</ButtonComponent></a>
+                        <a :href="$t('hero.cvLink')" target="_blank" rel="noopener noreferrer"><ButtonComponent type="secondary" class="w-full">{{ $t('hero.cta2') }}</ButtonComponent></a>
                     </div>
                 </div>
                 <div class="hidden w-full md:w-1/2 md:flex justify-center dark:bg-cWhite rounded-3xl">
-                    <img src="/images/hero.svg" alt="Illustration d'un développeur web" class="w-full" />
+                    <img src="/images/hero.svg" :alt="$t('utils.alt.hero')" class="w-full" />
                 </div>
             </div>
         </div>
@@ -31,11 +31,11 @@
                 <template #subtitle>{{ $t('about.subtitle') }}</template>
             </TitleComponent>
             <div class="flex flex-col md:flex-row justify-center md:space-y-0 space-y-6 md:space-x-16 dark:text-cWhite">
-                <img src="/images/about.jpg" alt="Photos de moi" class="w-full md:w-1/3 object-cover rounded-lg" />
+                <img src="/images/about.jpg" :alt="$t('utils.alt.about')" class="w-full md:w-1/3 object-cover rounded-lg" />
                 <div class="flex flex-col w-full md:w-2/3 justify-between">
                     <p class="text-lg" v-html="$t('about.description', {br: '<br><br>', bold: '<b>', nobold: '</b>'})" />
-                    <img src="/images/signature.png" alt="Signature de Filipe" class="w-2/3 md:w-1/3 mt-6 md:mt-12 dark:hidden" />
-                    <img src="/images/signature-dark.png" alt="Signature de Filipe" class="w-2/3 md:w-1/3 mt-6 md:mt-12 hidden dark:flex" />
+                    <img src="/images/signature.png" :alt="$t('utils.alt.signature')" class="w-2/3 md:w-1/3 mt-6 md:mt-12 dark:hidden" />
+                    <img src="/images/signature-dark.png" :alt="$t('utils.alt.signature')" class="w-2/3 md:w-1/3 mt-6 md:mt-12 hidden dark:flex" />
                 </div>
             </div>
         </div>

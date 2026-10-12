@@ -4,14 +4,14 @@
             <div class="flex flex-col lg:flex-row h-full bg-cBlack text-cWhite dark:bg-cWhite dark:text-cBlack rounded-lg px-12 py-12">
                 <div class="w-full lg:w-1/2 lg:flex justify-center lg:pr-12 lg:pb-0 pb-12">
                     <div v-if="project.color" class="flex h-full w-full outline outline-2 outline-cWhite dark:outline-cBlack rounded-lg justify-center items-center p-8" :style="{ backgroundColor: project.color }">
-                        <img :src="project.image_url || '/images/projects/' + project.image" :alt="'Projet ' + project.id" class="max-h-full object-contain" :style="{ maxWidth: project.image_scale || '65%', transform: project.image_offset_y ? `translateY(${project.image_offset_y})` : undefined }" />
+                        <img :src="project.image_url || '/images/projects/' + project.image" :alt="$t('utils.projectAlt', { name: name(project.title) })" class="max-h-full object-contain" :style="{ maxWidth: project.image_scale || '65%', transform: project.image_offset_y ? `translateY(${project.image_offset_y})` : undefined }" />
                     </div>
-                    <img v-else :src="'/images/projects/' + project.image" :alt="'Projet ' + project.id" class="flex h-full w-full outline outline-2 outline-cWhite dark:outline-cBlack object-cover rounded-lg" />
+                    <img v-else :src="'/images/projects/' + project.image" :alt="$t('utils.projectAlt', { name: name(project.title) })" class="flex h-full w-full outline outline-2 outline-cWhite dark:outline-cBlack object-cover rounded-lg" />
                 </div>
                 <div class="w-full lg:w-1/2 flex flex-col justify-between">
                     <div>
-                        <h1 class="text-2xl md:text-4xl text-left" v-html="project.title"></h1>
-                        <p class="text-lg text-cPrimary pt-6" v-html="project.date"></p>
+                        <h1 class="text-2xl md:text-4xl text-left" v-html="loc(project.title)"></h1>
+                        <p class="text-lg text-cPrimary pt-6" v-html="loc(project.date)"></p>
                     </div>
                     <div class="flex flex-col md:flex-row space-x-0 md:space-x-6">
                         <a v-if="project.demo" :href="project.demo_link" target="_blank" rel="noopener noreferrer">
@@ -50,9 +50,16 @@ import { computed, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { projects } from '@/data/projects'
 import type { Project } from '@/data/projects'
+import { useLocalized } from '@/composables/useLocalized'
+import type { Localized } from '@/composables/useLocalized'
 
 const route = useRoute()
 const router = useRouter()
+const { loc } = useLocalized()
+
+// Le titre est de la forme "<b>Nom</b> accroche" : on n'en garde que le nom.
+const name = (title: Localized | undefined) =>
+    loc(title).match(/<b>(.*?)<\/b>/)?.[1] ?? loc(title)
 
 // Reactive: vue-router reuses this component when only the param changes.
 const projectId = computed(() => route.params.projectId as string)

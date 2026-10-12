@@ -24,9 +24,9 @@
       class="absolute label z-10"
       :style="labelStyles[i]">
       <div class="bg-cBlack text-cWhite dark:outline-cPrimary dark:outline-2 dark:outline p-3 rounded-lg w-[300px]">
-          <p>{{ point.title }}</p>
+          <p>{{ $t(`career.items.${i}.title`) }}</p>
           <div class="flex w-full justify-between items-center mt-1">
-              <p class=" text-cPrimary">{{ point.date }}</p>
+              <p class=" text-cPrimary">{{ $t(`career.items.${i}.date`) }}</p>
               <!-- <img src="/icons/click.svg" alt="Plus d'informations" class="w-5 h-5" /> -->
           </div>
       </div>
@@ -38,21 +38,20 @@
   import { ref, reactive, watchEffect, onMounted, onBeforeUnmount } from 'vue';
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import { useI18n } from 'vue-i18n';
   import { useResizeObserver } from '@vueuse/core';
   
   gsap.registerPlugin(ScrollTrigger);
   
-  const { t } = useI18n();
   const timelineContainer = ref<HTMLDivElement | null>(null);
   const svgWidth = 1000;
   const labelWidth = 300;
   
+  // Geometrie seule: les libelles sont lus dans le template, donc traduits a la volee.
   const points = [
-    { cx: 100, cy: 252.5, offsetY: 60, title: t('career.items.0.title'), date: t('career.items.0.date') },
-    { cx: 366.67, cy: 289, offsetY: 400, title: t('career.items.1.title'), date: t('career.items.1.date') },
-    { cx: 633.33, cy: 176, offsetY: 0, title: t('career.items.2.title'), date: t('career.items.2.date') },
-    { cx: 900, cy: 167.5, offsetY: 300, title: t('career.items.3.title'), date: t('career.items.3.date') },
+    { cx: 100, cy: 252.5, offsetY: 60 },
+    { cx: 366.67, cy: 289, offsetY: 400 },
+    { cx: 633.33, cy: 176, offsetY: 0 },
+    { cx: 900, cy: 167.5, offsetY: 300 },
   ];
   
   const labelStyles = reactive<{ left?: string; right?: string; top: string }[]>([]);

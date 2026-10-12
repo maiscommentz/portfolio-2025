@@ -25,9 +25,24 @@
 </template>
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { watchEffect } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { gsap } from 'gsap'
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+
+// Titre et description de page suivent la langue affichee.
+const { t } = useI18n()
+watchEffect(() => {
+  document.title = t('meta.title')
+  let tag = document.querySelector('meta[name="description"]')
+  if (!tag) {
+    tag = document.createElement('meta')
+    tag.setAttribute('name', 'description')
+    document.head.appendChild(tag)
+  }
+  tag.setAttribute('content', t('meta.description'))
+})
 
 const bigBall = ".cursor__ball--big";
 const smallBall = ".cursor__ball--small"

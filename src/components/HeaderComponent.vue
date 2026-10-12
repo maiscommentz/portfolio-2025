@@ -36,11 +36,12 @@
         
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-6 [&>li:hover]:underline [&>li]:underline-offset-4 items-center text-cBlack dark:text-cWhite">
-          <li><RouterLink to="/#about">à propos</RouterLink></li>
-          <li><RouterLink to="/#career">parcours</RouterLink></li>
-          <li><RouterLink to="/#projects">projets</RouterLink></li>
-          <li><RouterLink to="/#contact">contact</RouterLink></li>
+          <li><RouterLink to="/#about">{{ $t('nav.about') }}</RouterLink></li>
+          <li><RouterLink to="/#career">{{ $t('nav.career') }}</RouterLink></li>
+          <li><RouterLink to="/#projects">{{ $t('nav.projects') }}</RouterLink></li>
+          <li><RouterLink to="/#contact">{{ $t('nav.contact') }}</RouterLink></li>
           <li></li>
+          <li><LanguageButtonComponent /></li>
           <ThemeButtonComponent />
         </ul>
       </nav>
@@ -58,12 +59,13 @@
       >
         <div v-if="isMenuOpen" class="absolute md:hidden container mx-auto items-center px-6 z-100 bg-cWhite dark:bg-cBlack dark:text-cWhite dark:shadow-[#FFFFFF0F] shadow-lg py-4">
           <ul class="flex flex-col space-y-2">
-            <li @click="isMenuOpen = false"><RouterLink to="/#about">à propos</RouterLink></li>
-            <li @click="isMenuOpen = false"><RouterLink to="/#career">parcours</RouterLink></li>
-            <li @click="isMenuOpen = false"><RouterLink to="/#projects">projets</RouterLink></li>
-            <li @click="isMenuOpen = false"><RouterLink to="/#contact">contact</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#about">{{ $t('nav.about') }}</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#career">{{ $t('nav.career') }}</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#projects">{{ $t('nav.projects') }}</RouterLink></li>
+            <li @click="isMenuOpen = false"><RouterLink to="/#contact">{{ $t('nav.contact') }}</RouterLink></li>
             <li></li>
-            <li class="w-full flex">
+            <li class="w-full flex justify-between items-center">
+              <LanguageButtonComponent />
               <ThemeButtonComponent />
             </li>
           </ul>
@@ -76,6 +78,7 @@
   import { ref } from 'vue';
   import { RouterLink } from 'vue-router';
   import ThemeButtonComponent from '@/components/ThemeButtonComponent.vue';
+  import LanguageButtonComponent from '@/components/LanguageButtonComponent.vue';
   
   const isMenuOpen = ref(false);
   </script>
